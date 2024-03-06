@@ -1,0 +1,35 @@
+export const COLORS = {
+  primary: {
+    purple100: '#D3C2F9',
+    purple200: '#AC87FB',
+    purple300: '#8E60EF',
+    purple400: '#7A43EF',
+    purple500: '#6427E4',
+    purple600: '#5B25C5',
+    purple700: '#4313A9',
+    purple800: '#380F8E',
+    purple900: '#260963',
+  },
+
+  secondary: {
+    green: '#58DB67',
+    lightBlue: '#11CDF2',
+    purple: '#CE7AF0',
+    magenta: '#FF70B0',
+    orange: '#FF875C',
+  },
+  baseColors: {
+    gray000: '#FFFFFF',
+    gray050: '#F4F6F9',
+    gray100: '#EFF1F4',
+    gray200: '#E2E5E8',
+    gray300: '#C1C3C6',
+    gray400: '#A1A5A7',
+    gray500: '#96999D',
+    gray600: '#797B7E',
+    gray700: '#656769',
+    gray800: '#46484A',
+    gray900: '#242628',
+    gray950: '#0E0E0E',
+  },
+};
