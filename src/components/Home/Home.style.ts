@@ -4,5 +4,5 @@ import styled from '@emotion/styled';
 export const HomeContainer = styled.div`
   width: 100px;
   height: 30px;
-  background: ${COLORS.primary};
+  background: ${COLORS.primary.purple100};
 `;
