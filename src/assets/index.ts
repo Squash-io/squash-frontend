@@ -1,2 +1,4 @@
 import IcBell from './icon/fi_bell.svg?react';
-export { IcBell };
+import IcSquash from './icon/squash.svg?react';
+
+export { IcBell, IcSquash };
