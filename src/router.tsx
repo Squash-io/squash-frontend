@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { Feed } from './components/Feed/Feed';
 import { Layout } from './components/@common/Layout/Layout';
+import Home from './pages/Home/Home';
 
 export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="" element={<Feed />} />
+        <Route path="" element={<Home />} />
       </Route>
     </Routes>
   );
