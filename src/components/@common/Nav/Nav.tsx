@@ -21,7 +21,12 @@ const Nav = () => {
   return (
     <NavContainer>
       {navItems.map((item) => (
-        <NavItem key={item.id} type="button" onClick={() => handleNavItemClicked(item.id)}>
+        <NavItem
+          key={item.id}
+          type="button"
+          onClick={() => handleNavItemClicked(item.id)}
+          $selected={item.selected}
+        >
           <Txt
             color={item.selected ? COLORS.baseColors.gray950 : COLORS.baseColors.gray400}
             textStyleName="body1"
