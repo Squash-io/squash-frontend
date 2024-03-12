@@ -1,5 +1,5 @@
 const My = () => {
-  return <div></div>;
+  return <div>my</div>;
 };
 
 export default My;
