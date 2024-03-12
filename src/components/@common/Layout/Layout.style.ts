@@ -11,8 +11,8 @@ export const Container = styled.section`
 `;
 
 export const DisplayWrapper = styled.section`
-  min-width: 60rem;
-  max-width: auto;
+  width: 100vw;
+  max-width: 43rem;
   height: 100vh;
   background-color: white;
 `;
