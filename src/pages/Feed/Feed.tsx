@@ -1,5 +1,7 @@
+import Banner from '../../components/Feed/Banner/Banner';
+
 const Feed = () => {
-  return <div>feed</div>;
+  return <Banner />;
 };
 
 export default Feed;
