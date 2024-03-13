@@ -9,6 +9,7 @@ export const BannerContainer = styled.section`
   margin: 1.6rem;
   border-radius: 1.3rem;
   background: linear-gradient(268deg, #9da6fa 12.82%, #6ba4f9 96.34%);
+  cursor: pointer;
 `;
 export const BannerContent = styled.div`
   display: flex;
