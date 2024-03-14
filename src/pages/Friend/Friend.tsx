@@ -1,5 +1,14 @@
+import { FavoriteFriendList } from '../../components/Friend/FavoriteFriendList/FavoriteFriendList';
+import { FriendList } from '../../components/Friend/FriendList/FriendList';
+import { Container } from './Friend.style';
+
 const Friend = () => {
-  return <div>friend</div>;
+  return (
+    <Container>
+      <FavoriteFriendList />
+      <FriendList />
+    </Container>
+  );
 };
 
 export default Friend;
