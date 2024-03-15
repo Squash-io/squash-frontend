@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
-export const HomeSection = styled.section`
+export const FeedContainer = styled.section`
   display: flex;
+  flex-direction: column;
   width: 100%;
 `;

@@ -4,7 +4,6 @@ export const BannerContainer = styled.section`
   display: flex;
   align-items: center;
   gap: 1.3rem;
-  width: 100%;
   padding: 1.6rem 0 1.6rem 2rem;
   margin: 1.6rem;
   border-radius: 1.3rem;
