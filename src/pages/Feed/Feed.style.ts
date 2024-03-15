@@ -10,4 +10,9 @@ export const FeedContainer = styled.section`
 export const FeedBox = styled.section`
   height: calc(100% - 21rem);
   overflow-y: scroll;
+
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
