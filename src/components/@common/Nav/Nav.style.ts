@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const NavContainer = styled.section`
   display: flex;
   padding: 1.6rem 4rem;
+  height: 5.6rem;
 `;
 export const NavItem = styled.button<{ $selected: boolean }>`
   display: flex;

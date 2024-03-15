@@ -1,12 +1,14 @@
 import Banner from '../../components/Feed/Banner/Banner';
 import FeedList from '../../components/Feed/FeedList/FeedList';
-import { FeedContainer } from './Feed.style';
+import { FeedBox, FeedContainer } from './Feed.style';
 
 const Feed = () => {
   return (
     <FeedContainer>
       <Banner />
-      <FeedList />
+      <FeedBox>
+        <FeedList />
+      </FeedBox>
     </FeedContainer>
   );
 };
