@@ -39,7 +39,7 @@ const Nav = () => {
         >
           <Txt
             color={item.selected ? COLORS.baseColors.gray950 : COLORS.baseColors.gray400}
-            textStyleName="body1"
+            textStyleName="P2"
           >
             {item.text}
           </Txt>
