@@ -11,4 +11,5 @@ export const StyledText = styled.div<StyledTextProps>(({ color, textStyleName })
   fontSize: TEXT_STYLES[textStyleName].fontSize,
   fontWeight: TEXT_STYLES[textStyleName].fontWeight,
   lineHeight: TEXT_STYLES[textStyleName].lineHeight,
+  letterSpacing: TEXT_STYLES[textStyleName].letterSpacing,
 }));

@@ -10,7 +10,6 @@ export const Router = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="" element={<Home />}>
-          <Route index element={<Feed />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/friend" element={<Friend />} />
           <Route path="/my" element={<My />} />
