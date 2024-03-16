@@ -27,10 +27,10 @@ const FeedItem = (props: FeedProps) => {
       <InfoContainer>
         <InfoPicture src={image} />
         <InfoText>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="body1">
+          <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
             {name}
           </Txt>
-          <Txt color={COLORS.baseColors.gray400} textStyleName="body2R">
+          <Txt color={COLORS.baseColors.gray400} textStyleName="P4">
             {repository}
           </Txt>
         </InfoText>
@@ -40,16 +40,16 @@ const FeedItem = (props: FeedProps) => {
         {category === 'commit' && <IcCommit />}
         {category === 'alert' && <IcAlertCircle />}
         <ActivityText>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="body2R">
+          <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
             {activityTitle}
           </Txt>
           {activitySubTitle && (
-            <Txt color={COLORS.baseColors.gray400} textStyleName="caption">
+            <Txt color={COLORS.baseColors.gray400} textStyleName="P6">
               {activitySubTitle}
             </Txt>
           )}
           {language && (
-            <Txt color={COLORS.baseColors.gray800} textStyleName="caption">
+            <Txt color={COLORS.baseColors.gray800} textStyleName="P6">
               {language}
             </Txt>
           )}

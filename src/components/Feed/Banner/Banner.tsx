@@ -8,11 +8,11 @@ const Banner = () => {
     <BannerContainer>
       <IcGithub />
       <BannerContent>
-        <Txt color={COLORS.baseColors.gray000} textStyleName="caption">
+        <Txt color={COLORS.baseColors.gray000} textStyleName="P4">
           내 친구들의 커밋소식을 알기 위해
         </Txt>
         <ShortCut>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="body1">
+          <Txt color={COLORS.baseColors.gray950} textStyleName="B1">
             깃허브 로그인 바로가기
           </Txt>
           <IcChevronRight />

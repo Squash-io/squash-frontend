@@ -49,7 +49,7 @@ const FeedList = () => {
     <>
       {data.map((list) => (
         <FeedListContainer>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="body1">
+          <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
             {list.day}
           </Txt>
           {list.data.map((item) => (
