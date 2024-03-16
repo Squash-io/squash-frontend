@@ -16,10 +16,10 @@ export const FavoriteFriendList = () => {
   return (
     <>
       <TitleContainer>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="body1" className="title">
+        <Txt color={COLORS.baseColors.gray950} textStyleName="P2" className="title">
           즐겨찾기
         </Txt>
-        <Txt color={COLORS.baseColors.gray500} textStyleName="body1">
+        <Txt color={COLORS.baseColors.gray500} textStyleName="P2">
           {count}
         </Txt>
         {isDown ? (

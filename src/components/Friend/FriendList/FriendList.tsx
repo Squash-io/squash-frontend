@@ -8,10 +8,10 @@ export const FriendList = () => {
   return (
     <>
       <TitleContainer>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="body1" className="title">
+        <Txt color={COLORS.baseColors.gray950} textStyleName="B1" className="title">
           친구
         </Txt>
-        <Txt color={COLORS.baseColors.gray500} textStyleName="body1">
+        <Txt color={COLORS.baseColors.gray500} textStyleName="B1">
           {count}
         </Txt>
       </TitleContainer>
