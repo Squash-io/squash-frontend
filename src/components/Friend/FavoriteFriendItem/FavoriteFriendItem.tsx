@@ -1,6 +1,6 @@
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
-import { ItemContainer, UserInfoContainer } from './FavoriteFriendItem.style';
+import { FavoriteFriendItemContainer, FriendInfoContainer } from './FavoriteFriendItem.style';
 
 interface User {
   profile: string;
@@ -15,19 +15,21 @@ interface FavoriteFriendItemProps {
 
 export const FavoriteFriendItem = ({ user }: FavoriteFriendItemProps) => {
   return (
-    <ItemContainer>
-      <img src={user.profile} alt="프로필 사진"></img>
-      <UserInfoContainer>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="P3" className="user-id">
+    <FavoriteFriendItemContainer>
+      <div>
+        <img src={user.profile} alt="프로필 사진"></img>
+      </div>
+      <FriendInfoContainer>
+        <Txt color={COLORS.baseColors.gray950} textStyleName="P3">
           {user.id}
         </Txt>
-        <Txt color={COLORS.baseColors.gray700} textStyleName="P5" className="user-name">
+        <Txt color={COLORS.baseColors.gray700} textStyleName="P4">
           {user.name}
         </Txt>
         <Txt color={COLORS.baseColors.gray400} textStyleName="P6" className="user-description">
           {user.description}
         </Txt>
-      </UserInfoContainer>
-    </ItemContainer>
+      </FriendInfoContainer>
+    </FavoriteFriendItemContainer>
   );
 };
