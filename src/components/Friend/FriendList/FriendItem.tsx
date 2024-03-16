@@ -17,7 +17,7 @@ export const FriendItem = ({ user }: FriendItemProps) => {
   return (
     <ItemContainer>
       <img src={user.profile} alt="프로필 사진"></img>
-      <Txt color={COLORS.baseColors.gray950} textStyleName="body2B" className="user-id">
+      <Txt color={COLORS.baseColors.gray950} textStyleName="P3" className="user-id">
         {user.id}
       </Txt>
       <IcStar className="btn-star" />

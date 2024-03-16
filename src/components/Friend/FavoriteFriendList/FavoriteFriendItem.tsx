@@ -18,13 +18,13 @@ export const FavoriteFriendItem = ({ user }: FavoriteFriendItemProps) => {
     <ItemContainer>
       <img src={user.profile} alt="프로필 사진"></img>
       <UserInfoContainer>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="body2B" className="user-id">
+        <Txt color={COLORS.baseColors.gray950} textStyleName="P3" className="user-id">
           {user.id}
         </Txt>
-        <Txt color={COLORS.baseColors.gray700} textStyleName="body2B" className="user-name">
+        <Txt color={COLORS.baseColors.gray700} textStyleName="P5" className="user-name">
           {user.name}
         </Txt>
-        <Txt color={COLORS.baseColors.gray400} textStyleName="caption" className="user-description">
+        <Txt color={COLORS.baseColors.gray400} textStyleName="P6" className="user-description">
           {user.description}
         </Txt>
       </UserInfoContainer>
