@@ -10,4 +10,5 @@ export const FeedContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  cursor: pointer;
 `;
