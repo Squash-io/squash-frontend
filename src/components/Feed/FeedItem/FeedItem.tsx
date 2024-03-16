@@ -8,6 +8,8 @@ import {
   InfoContainer,
   InfoPicture,
   InfoText,
+  LanguageBox,
+  LanguageColor,
 } from './FeedItem.style';
 
 export interface FeedProps {
@@ -21,7 +23,6 @@ export interface FeedProps {
 }
 const FeedItem = (props: FeedProps) => {
   const { name, repository, image, category, activityTitle, activitySubTitle, language } = props;
-
   return (
     <FeedContainer>
       <InfoContainer>
@@ -49,9 +50,12 @@ const FeedItem = (props: FeedProps) => {
             </Txt>
           )}
           {language && (
-            <Txt color={COLORS.baseColors.gray800} textStyleName="P6">
-              {language}
-            </Txt>
+            <LanguageBox>
+              <LanguageColor $language={language} />
+              <Txt color={COLORS.baseColors.gray800} textStyleName="P6">
+                {language}
+              </Txt>
+            </LanguageBox>
           )}
         </ActivityText>
       </ActivityContainer>

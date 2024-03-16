@@ -36,3 +36,15 @@ export const ActivityText = styled.div`
   gap: 0.8rem;
   text-align: left;
 `;
+export const LanguageBox = styled.div`
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+`;
+export const LanguageColor = styled.div<{ $language: string }>`
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: ${({ $language }) =>
+    COLORS.languageColors[$language as keyof typeof COLORS.languageColors]};
+`;

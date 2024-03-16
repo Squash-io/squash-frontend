@@ -9,6 +9,7 @@ const FeedList = () => {
       day: 'Today',
       data: [
         {
+          id: 1,
           name: 'HI_JIN2',
           repository: 'YourSSU/YDSAndroid',
           image: 'https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg',
@@ -18,6 +19,7 @@ const FeedList = () => {
           language: 'Kotlin',
         },
         {
+          id: 2,
           name: 'JjungminLee',
           repository: 'EatSSU?EatSSUAndroid',
           image:
@@ -25,7 +27,7 @@ const FeedList = () => {
           category: 'commit',
           activityTitle: 'FEAT : 버튼 컴포넌트 개발',
           activitySubTitle: null,
-          language: 'Kotlin',
+          language: 'TypeScript',
         },
       ],
     },
@@ -33,6 +35,7 @@ const FeedList = () => {
       day: '2024.02.06',
       data: [
         {
+          id: 3,
           name: 'HI_JIN2',
           repository: 'YourSSU/YDSAndroid',
           image: 'https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg',
@@ -48,12 +51,13 @@ const FeedList = () => {
   return (
     <>
       {data.map((list) => (
-        <FeedListContainer>
+        <FeedListContainer key={list.day}>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
             {list.day}
           </Txt>
           {list.data.map((item) => (
             <FeedItem
+              key={item.id}
               name={item.name}
               repository={item.repository}
               image={item.image}
