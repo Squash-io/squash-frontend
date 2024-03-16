@@ -1,5 +1,5 @@
-import { IcBell, IcSquash } from '../../assets';
-import { HeaderContainer } from './Common.style';
+import { IcBell, IcSquash } from '../../../assets';
+import { HeaderContainer } from './Header.style';
 
 const Header = () => {
   return (
