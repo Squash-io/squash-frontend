@@ -16,7 +16,7 @@ export const FavoriteFriendList = () => {
   return (
     <>
       <TitleContainer>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="P2" className="title">
+        <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
           즐겨찾기
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P2">
