@@ -8,6 +8,8 @@ export const FeedContainer = styled.section`
 `;
 
 export const FeedBox = styled.section`
+  display: flex;
+  flex-direction: column;
   height: calc(100% - 21rem);
   overflow-y: scroll;
 
