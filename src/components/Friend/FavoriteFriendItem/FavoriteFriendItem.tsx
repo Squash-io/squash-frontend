@@ -26,7 +26,7 @@ export const FavoriteFriendItem = ({ user }: FavoriteFriendItemProps) => {
         <Txt color={COLORS.baseColors.gray700} textStyleName="P4">
           {user.name}
         </Txt>
-        <Txt color={COLORS.baseColors.gray400} textStyleName="P6" className="user-description">
+        <Txt color={COLORS.baseColors.gray500} textStyleName="P6" className="user-description">
           {user.description}
         </Txt>
       </FriendInfoContainer>
