@@ -8,7 +8,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [navItems, setNavItems] = useState([
-    { id: 'feed', text: '피드', selected: true },
+    { id: 'feed', text: '피드', selected: false },
     { id: 'friend', text: '친구', selected: false },
     { id: 'my', text: '마이', selected: false },
   ]);

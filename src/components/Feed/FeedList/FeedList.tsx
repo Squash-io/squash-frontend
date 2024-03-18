@@ -1,12 +1,13 @@
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
+import { formatToTodayOrDate } from '../../../utils/dateUtils';
 import FeedItem from '../FeedItem/FeedItem';
 import { FeedListContainer } from './FeedList.style';
 
 const FeedList = () => {
   const data = [
     {
-      day: 'Today',
+      day: 20240318,
       data: [
         {
           id: 1,
@@ -32,7 +33,7 @@ const FeedList = () => {
       ],
     },
     {
-      day: '2024.02.06',
+      day: 20240206,
       data: [
         {
           id: 3,
@@ -53,7 +54,7 @@ const FeedList = () => {
       {data.map((list) => (
         <FeedListContainer key={list.day}>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
-            {list.day}
+            {formatToTodayOrDate(list.day)}
           </Txt>
           {list.data.map((item) => (
             <FeedItem

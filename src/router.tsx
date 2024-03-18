@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/@common/Layout/Layout';
 import Home from './pages/Home/Home';
 import Feed from './pages/Feed/Feed';
@@ -10,8 +10,8 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="" element={<Home />}>
-          <Route index element={<Feed />} />
+        <Route path="/" element={<Home />}>
+          <Route path="/" element={<Navigate to="/feed" />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/friend" element={<Friend />} />
           <Route path="/friendDetail" element={<FriendDetail />} />
