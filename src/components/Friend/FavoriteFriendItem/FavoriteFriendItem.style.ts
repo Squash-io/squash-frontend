@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
-export const ItemContainer = styled.section`
+export const FavoriteFriendItemContainer = styled.div`
   display: flex;
-  margin-bottom: 2.4rem;
+  column-gap: 2.4rem;
+  align-items: center;
   word-break: break-all;
 
   img {
@@ -13,15 +14,13 @@ export const ItemContainer = styled.section`
   }
 `;
 
-export const UserInfoContainer = styled.section`
+export const FriendInfoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  align-items: center;
   width: 100%;
-  margin-left: 2.4rem;
-
-  .user-id {
-    margin-right: 0.8rem;
-  }
 
   .user-description {
     width: 100%;

@@ -1,13 +1,13 @@
 import { FavoriteFriendList } from '../../components/Friend/FavoriteFriendList/FavoriteFriendList';
 import { FriendList } from '../../components/Friend/FriendList/FriendList';
-import { Container } from './Friend.style';
+import { FriendContainer } from './Friend.style';
 
 const Friend = () => {
   return (
-    <Container>
+    <FriendContainer>
       <FavoriteFriendList />
       <FriendList />
-    </Container>
+    </FriendContainer>
   );
 };
 
