@@ -1,6 +1,6 @@
-import { IcAlertCircle, IcCommit, IcPullRequest } from '../../../assets';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
+import { getIconByCategory } from '../../../utils/iconUtils';
 import { FeedContainer } from '../FeedList/FeedList.style';
 import {
   ActivityContainer,
@@ -37,9 +37,7 @@ const FeedItem = (props: FeedProps) => {
         </InfoText>
       </InfoContainer>
       <ActivityContainer>
-        {category === 'pr' && <IcPullRequest />}
-        {category === 'commit' && <IcCommit />}
-        {category === 'alert' && <IcAlertCircle />}
+        {getIconByCategory(category)}
         <ActivityText>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
             {activityTitle}
