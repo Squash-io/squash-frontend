@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
-import { FriendContainer, TitleContainer } from '../common/List.style';
+import { Container, TitleContainer, ListContainer } from './FavoriteFriendList.style';
 import { IcUp, IcDown } from '../../../assets';
-import { FavoriteFriendItem } from './FavoriteFriendItem';
+import { FavoriteFriendItem } from '../FavoriteFriendItem/FavoriteFriendItem';
 import { count, dummyFavoriteFriendList as user } from '../dummyData';
 
 export const FavoriteFriendList = () => {
-  const [isDown, setIsDown] = useState(true);
+  const [isOpen, setIsDown] = useState(true);
 
   const handleIconClick = () => {
-    setIsDown(!isDown);
+    setIsDown(!isOpen);
   };
 
   return (
-    <>
+    <Container>
       <TitleContainer>
         <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
           즐겨찾기
@@ -22,19 +22,23 @@ export const FavoriteFriendList = () => {
         <Txt color={COLORS.baseColors.gray500} textStyleName="P2">
           {count}
         </Txt>
-        {isDown ? (
-          <IcUp className="btn-toggle" onClick={handleIconClick} />
+        {isOpen ? (
+          <div className="btn-toggle">
+            <IcUp onClick={handleIconClick} />
+          </div>
         ) : (
-          <IcDown className="btn-toggle" onClick={handleIconClick} />
+          <div className="btn-toggle">
+            <IcDown onClick={handleIconClick} />
+          </div>
         )}
       </TitleContainer>
-      {isDown && (
-        <FriendContainer>
+      {isOpen && (
+        <ListContainer>
           {user.map((item, index) => (
             <FavoriteFriendItem key={index} user={item} />
           ))}
-        </FriendContainer>
+        </ListContainer>
       )}
-    </>
+    </Container>
   );
 };
