@@ -1,16 +1,9 @@
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { getIconByCategory } from '../../../utils/iconUtils';
+import ProfileInfo from '../../@common/ProfileInfo/ProfileInfo';
 import { FeedContainer } from '../FeedList/FeedList.style';
-import {
-  ActivityContainer,
-  ActivityText,
-  InfoContainer,
-  InfoPicture,
-  InfoText,
-  LanguageBox,
-  LanguageColor,
-} from './FeedItem.style';
+import { ActivityContainer, ActivityText, LanguageBox, LanguageColor } from './FeedItem.style';
 
 export interface FeedProps {
   name: string;
@@ -25,17 +18,7 @@ const FeedItem = (props: FeedProps) => {
   const { name, repository, image, category, activityTitle, activitySubTitle, language } = props;
   return (
     <FeedContainer>
-      <InfoContainer>
-        <InfoPicture src={image} />
-        <InfoText>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
-            {name}
-          </Txt>
-          <Txt color={COLORS.baseColors.gray400} textStyleName="P4">
-            {repository}
-          </Txt>
-        </InfoText>
-      </InfoContainer>
+      <ProfileInfo name={name} repository={repository} image={image} />
       <ActivityContainer>
         {getIconByCategory(category)}
         <ActivityText>
