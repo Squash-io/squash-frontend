@@ -9,18 +9,35 @@ const Nav = () => {
   const location = useLocation();
   const [navItems, setNavItems] = useState([
     { id: 'feed', text: '피드', selected: false },
+    { id: 'feedDetail', text: '피드상세', selected: false },
     { id: 'friend', text: '친구', selected: false },
+    { id: 'friendDetail', text: '친구상세', selected: false },
     { id: 'my', text: '마이', selected: false },
   ]);
+  const showNavItems = navItems.filter((item) => item.id.length < 7);
 
   useEffect(() => {
     const selectedNavItem = navItems.find((item) => `/${item.id}` === location.pathname);
     if (selectedNavItem) {
-      const updatedItems = navItems.map((item) => ({
-        ...item,
-        selected: item.id === selectedNavItem.id,
-      }));
-      setNavItems(updatedItems);
+      if (selectedNavItem.id === 'feedDetail') {
+        const updatedItems = navItems.map((item) => ({
+          ...item,
+          selected: item.id === 'feed',
+        }));
+        setNavItems(updatedItems);
+      } else if (selectedNavItem.id === 'friendDetail') {
+        const updatedItems = navItems.map((item) => ({
+          ...item,
+          selected: item.id === 'friend',
+        }));
+        setNavItems(updatedItems);
+      } else {
+        const updatedItems = navItems.map((item) => ({
+          ...item,
+          selected: item.id === selectedNavItem?.id,
+        }));
+        setNavItems(updatedItems);
+      }
     }
   }, [location.pathname]);
 
@@ -30,7 +47,7 @@ const Nav = () => {
 
   return (
     <NavContainer>
-      {navItems.map((item) => (
+      {showNavItems.map((item) => (
         <NavItem
           key={item.id}
           type="button"
