@@ -3,6 +3,8 @@ import ProfileInfo from '../../components/@common/ProfileInfo/ProfileInfo';
 import { FeedDetailContainer } from './FeedDetail.style';
 import Commit from '../../components/FeedDetail/Commit/Commit';
 import GithubShortCut from '../../components/FeedDetail/GithubShortCut/GithubShortCut';
+import Pr from '../../components/FeedDetail/Pr/Pr';
+import Issue from '../../components/FeedDetail/Issue/Issue';
 
 const FeedDetail = () => {
   const data = [
@@ -32,9 +34,9 @@ const FeedDetail = () => {
       repository: 'YourSSU/YDSAndroid',
       image: 'https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg',
       category: 'issue',
-      IssueTitle: 'FEAT : 버튼 컴포넌트 개발',
+      issueTitle: 'FEAT : 버튼 컴포넌트 개발',
       day: 20240206,
-      RelatedPr: 'Feat : 컬러토큰 추가',
+      relatedPr: 'Feat : 컬러토큰 추가',
       commit: ['FIX : Merge Conflict', 'Feat : 버튼 컴포넌트 구현'],
     },
   ];
@@ -48,6 +50,17 @@ const FeedDetail = () => {
       <ProfileInfo name={feed[0].name} repository={feed[0].repository} image={feed[0].image} />
       {feed[0].category === 'commit' && (
         <Commit commitMessage={feed[0].commitMessage} day={feed[0].day} />
+      )}
+      {feed[0].category === 'pr' && (
+        <Pr prTitle={feed[0].prTitle} day={feed[0].day} commit={feed[0].commit} />
+      )}
+      {feed[0].category === 'issue' && (
+        <Issue
+          issueTitle={feed[0].issueTitle}
+          day={feed[0].day}
+          commit={feed[0].commit}
+          relatedPr={feed[0].relatedPr}
+        />
       )}
       <GithubShortCut />
     </FeedDetailContainer>
