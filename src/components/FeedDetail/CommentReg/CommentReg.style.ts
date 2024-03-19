@@ -10,9 +10,13 @@ export const CommentRegContainer = styled.div`
 `;
 export const CommentInput = styled.textarea`
   width: 100%;
-  padding: 1.6rem 1.3rem;
+  padding: 3.3rem 1.3rem;
   border-radius: 1.2rem;
   border: solid 0.1rem ${COLORS.baseColors.gray400};
+  ::placeholder {
+    font-size: 1rem;
+    color: ${COLORS.baseColors.gray400};
+  }
 `;
 export const RegButton = styled.button`
   padding: 0.7rem 3.6rem;
