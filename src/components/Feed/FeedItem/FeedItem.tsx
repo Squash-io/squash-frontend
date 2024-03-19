@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { getIconByCategory } from '../../../utils/iconUtils';
@@ -16,8 +17,12 @@ export interface FeedProps {
 }
 const FeedItem = (props: FeedProps) => {
   const { name, repository, image, category, activityTitle, activitySubTitle, language } = props;
+  const navigate = useNavigate();
+  const handleToMoveFeedDetail = () => {
+    navigate('/feedDetail');
+  };
   return (
-    <FeedContainer>
+    <FeedContainer onClick={handleToMoveFeedDetail}>
       <ProfileInfo name={name} repository={repository} image={image} />
       <ActivityContainer>
         {getIconByCategory(category)}
