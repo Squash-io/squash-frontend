@@ -6,7 +6,7 @@ import { GithubShortCutContainer, ShortCutButtonContainer } from './GithubShortC
 const GithubShortCut = () => {
   return (
     <GithubShortCutContainer>
-      <ShortCutButtonContainer>
+      <ShortCutButtonContainer type="button">
         <IcGitHubSmall />
         <Txt color={COLORS.baseColors.gray950} textStyleName="P7">
           깃허브에서 확인하기

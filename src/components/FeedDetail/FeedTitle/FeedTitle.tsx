@@ -1,5 +1,6 @@
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
+import { formatToTodayOrDate } from '../../../utils/dateUtils';
 import { getIconByCategory } from '../../../utils/iconUtils';
 import { FeedTitleBox, FeedTitleContainer } from './FeedTitle.style';
 
@@ -18,7 +19,7 @@ const FeedTitle = (props: FeedTitleProps) => {
           {title}
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
-          {day}
+          {formatToTodayOrDate(day)}
         </Txt>
       </FeedTitleBox>
     </FeedTitleContainer>

@@ -6,9 +6,21 @@ export const FeedDetailContainer = styled.section`
   margin: 1.2rem 1.6rem;
   gap: 2.5rem;
   width: 100%;
+  height: calc(100% - 11.6rem);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
-export const HistoryCotainer = styled.div`
+export const CommitCotainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+`;
+export const CommentCotainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  gap: 0.9rem;
 `;
