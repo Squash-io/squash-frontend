@@ -7,6 +7,7 @@ import { FeedContainer } from '../FeedList/FeedList.style';
 import { ActivityContainer, ActivityText, LanguageBox, LanguageColor } from './FeedItem.style';
 
 export interface FeedProps {
+  id: number;
   name: string;
   repository: string;
   image: string;
@@ -16,10 +17,13 @@ export interface FeedProps {
   language: string | null;
 }
 const FeedItem = (props: FeedProps) => {
-  const { name, repository, image, category, activityTitle, activitySubTitle, language } = props;
+  const { id, name, repository, image, category, activityTitle, activitySubTitle, language } =
+    props;
   const navigate = useNavigate();
   const handleToMoveFeedDetail = () => {
-    navigate('/feedDetail');
+    navigate('/feedDetail', {
+      state: { id: id },
+    });
   };
   return (
     <FeedContainer onClick={handleToMoveFeedDetail}>

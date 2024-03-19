@@ -59,6 +59,7 @@ const FeedList = () => {
           {list.data.map((item) => (
             <FeedItem
               key={item.id}
+              id={item.id}
               name={item.name}
               repository={item.repository}
               image={item.image}
