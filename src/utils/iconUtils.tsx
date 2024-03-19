@@ -8,7 +8,7 @@ export const getIconByCategory = (category: string) => {
       return <IcPullRequest />;
     case 'commit':
       return <IcCommit />;
-    case 'alert':
+    case 'issue':
       return <IcAlertCircle />;
     default:
       return null;
