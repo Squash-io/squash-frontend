@@ -8,6 +8,8 @@ import IcAlertCircle from './icon/fi_alert-circle.svg?react';
 import IcStar from './icon/fi_star.svg?react';
 import IcDown from './icon/fi_chevron-down.svg?react';
 import IcUp from './icon/fi_chevron-up.svg?react';
+import IcGitHubSmall from './icon/fi_github_small.svg?react';
+import IcChervonsRight from './icon/fi_chevrons-right.svg?react';
 
 export {
   IcBell,
@@ -20,4 +22,6 @@ export {
   IcStar,
   IcDown,
   IcUp,
+  IcGitHubSmall,
+  IcChervonsRight,
 };
