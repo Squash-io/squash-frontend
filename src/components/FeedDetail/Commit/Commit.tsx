@@ -1,6 +1,5 @@
 import { IcCommit } from '../../../assets';
-import { COLORS } from '../../../constants/Color/Color';
-import Txt from '../../../constants/Txt/Txt';
+import FeedTitle from '../FeedTitle/FeedTitle';
 import { CommitContainer, CommitMessageBox } from './Commit.style';
 
 interface CommitProps {
@@ -13,12 +12,7 @@ const Commit = (props: CommitProps) => {
     <CommitContainer>
       <IcCommit />
       <CommitMessageBox>
-        <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
-          {commitMessage}
-        </Txt>
-        <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
-          {day}
-        </Txt>
+        <FeedTitle title={commitMessage} day={day} />
       </CommitMessageBox>
     </CommitContainer>
   );
