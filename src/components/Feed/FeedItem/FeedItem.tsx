@@ -1,18 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { getIconByCategory } from '../../../utils/iconUtils';
+import ProfileInfo from '../../@common/ProfileInfo/ProfileInfo';
 import { FeedContainer } from '../FeedList/FeedList.style';
-import {
-  ActivityContainer,
-  ActivityText,
-  InfoContainer,
-  InfoPicture,
-  InfoText,
-  LanguageBox,
-  LanguageColor,
-} from './FeedItem.style';
+import { ActivityContainer, ActivityText, LanguageBox, LanguageColor } from './FeedItem.style';
 
 export interface FeedProps {
+  id: number;
   name: string;
   repository: string;
   image: string;
@@ -22,20 +17,17 @@ export interface FeedProps {
   language: string | null;
 }
 const FeedItem = (props: FeedProps) => {
-  const { name, repository, image, category, activityTitle, activitySubTitle, language } = props;
+  const { id, name, repository, image, category, activityTitle, activitySubTitle, language } =
+    props;
+  const navigate = useNavigate();
+  const handleToMoveFeedDetail = () => {
+    navigate('/feedDetail', {
+      state: { id: id },
+    });
+  };
   return (
-    <FeedContainer>
-      <InfoContainer>
-        <InfoPicture src={image} />
-        <InfoText>
-          <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
-            {name}
-          </Txt>
-          <Txt color={COLORS.baseColors.gray400} textStyleName="P4">
-            {repository}
-          </Txt>
-        </InfoText>
-      </InfoContainer>
+    <FeedContainer onClick={handleToMoveFeedDetail}>
+      <ProfileInfo name={name} repository={repository} image={image} />
       <ActivityContainer>
         {getIconByCategory(category)}
         <ActivityText>

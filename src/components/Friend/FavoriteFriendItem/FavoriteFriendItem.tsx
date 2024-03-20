@@ -1,6 +1,7 @@
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { FavoriteFriendItemContainer, FriendInfoContainer } from './FavoriteFriendItem.style';
+import { useNavigate } from 'react-router-dom';
 
 interface User {
   profile: string;
@@ -14,8 +15,12 @@ interface FavoriteFriendItemProps {
 }
 
 export const FavoriteFriendItem = ({ user }: FavoriteFriendItemProps) => {
+  const navigate = useNavigate();
+  const handleToMoveFriendDetail = () => {
+    navigate('/friendDetail');
+  };
   return (
-    <FavoriteFriendItemContainer>
+    <FavoriteFriendItemContainer onClick={handleToMoveFriendDetail}>
       <div>
         <img src={user.profile} alt="프로필 사진"></img>
       </div>
