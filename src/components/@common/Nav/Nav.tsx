@@ -15,29 +15,28 @@ const Nav = () => {
     { id: 'my', text: '마이', selected: false },
   ]);
   const showNavItems = navItems.filter((item) => item.id.length < 7);
+  let updatedItems;
 
   useEffect(() => {
     const selectedNavItem = navItems.find((item) => `/${item.id}` === location.pathname);
     if (selectedNavItem) {
       if (selectedNavItem.id === 'feedDetail') {
-        const updatedItems = navItems.map((item) => ({
+        updatedItems = navItems.map((item) => ({
           ...item,
           selected: item.id === 'feed',
         }));
-        setNavItems(updatedItems);
       } else if (selectedNavItem.id === 'friendDetail') {
-        const updatedItems = navItems.map((item) => ({
+        updatedItems = navItems.map((item) => ({
           ...item,
           selected: item.id === 'friend',
         }));
-        setNavItems(updatedItems);
       } else {
-        const updatedItems = navItems.map((item) => ({
+        updatedItems = navItems.map((item) => ({
           ...item,
           selected: item.id === selectedNavItem?.id,
         }));
-        setNavItems(updatedItems);
       }
+      setNavItems(updatedItems);
     }
   }, [location.pathname]);
 

@@ -5,7 +5,7 @@ export const Container = styled.section`
   column-gap: 2.4rem;
   align-items: center;
   word-break: break-all;
-  margin: 2.4rem 1.6rem;
+  margin: 3rem 1.6rem 2.4rem 1.6rem;
   cursor: pointer;
 
   img {
