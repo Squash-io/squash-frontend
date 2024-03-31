@@ -5,10 +5,10 @@ import { BannerContainer, BannerContent, ShortCut } from './Banner.style';
 
 const Banner = () => {
   const clientId = import.meta.env.VITE_CLIENT_ID;
-  const redirectUrl = import.meta.env.VITE_REDIRECT_URL;
-  console.log(redirectUrl);
+  const redirectUrl = import.meta.env.VITE_REDIRCT_URL;
+
   const handleLoginClick = () => {
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=http://localhost:5173/github/login/callback`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}`;
   };
   return (
     <BannerContainer>

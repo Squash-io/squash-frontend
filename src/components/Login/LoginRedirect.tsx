@@ -12,15 +12,14 @@ const LoginRedirect = () => {
       const code = searchParams.get('code');
       if (code) {
         const data = { code };
+
         try {
           const res = await postLogin(data);
           if (res.token) {
             api.setAccessToken(res.token);
             navigate('/feed');
           }
-        } catch (error) {
-          console.error(error);
-        }
+        } catch (error) {}
       }
     };
 
