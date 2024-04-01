@@ -17,7 +17,7 @@ export const BannerContent = styled.div`
   flex-direction: column;
   flex: 1;
 `;
-export const ShortCut = styled.div`
+export const ShortCut = styled.button`
   display: flex;
   justify-content: space-between;
   margin-right: 0.8rem;

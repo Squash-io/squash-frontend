@@ -6,11 +6,13 @@ import Friend from './pages/Friend/Friend';
 import My from './pages/My/My';
 import FriendDetail from './pages/FriendDetail/FriendDetail';
 import FeedDetail from './pages/FeedDetail/FeedDetail';
+import LoginRedirectPage from './pages/Login/LoginRedirectPage';
 
 export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="/github/login/callback" element={<LoginRedirectPage />} />
         <Route path="/" element={<Home />}>
           <Route path="/" element={<Navigate to="/feed" />} />
           <Route path="/feed" element={<Feed />} />
