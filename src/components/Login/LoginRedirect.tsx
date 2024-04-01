@@ -24,7 +24,7 @@ const LoginRedirect = () => {
     };
 
     fetchLogin();
-  }, [searchParams]);
+  }, []);
 
   return <div>로그인중</div>;
 };
