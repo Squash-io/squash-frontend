@@ -22,6 +22,7 @@ export const Router = () => {
           <Route path="/my" element={<My />} />
         </Route>
       </Route>
+      <Route path="/*" element={<Home />} />
     </Routes>
   );
 };
