@@ -29,3 +29,9 @@ export const IconBox = styled.div`
   background-color: ${COLORS.baseColors.gray000};
   cursor: pointer;
 `;
+export const RepositoryList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.6rem;
+  gap: 1.3rem;
+`;

@@ -1,6 +1,6 @@
 import Banner from '../../components/Feed/Banner/Banner';
 import FeedList from '../../components/Feed/FeedList/FeedList';
-import { FeedBox, FeedContainer } from './Feed.style';
+import { FeedContainer } from './Feed.style';
 
 const Feed = () => {
   return (

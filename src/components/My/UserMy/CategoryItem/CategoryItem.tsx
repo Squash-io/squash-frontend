@@ -4,11 +4,13 @@ import { Item } from './CategoryItem.style';
 
 export interface CategortProps {
   name: string;
+  onClick: () => void;
+  isSelected: boolean;
 }
 const CategoryItem = (props: CategortProps) => {
-  const { name } = props;
+  const { name, onClick, isSelected } = props;
   return (
-    <Item>
+    <Item onClick={onClick} $isSelected={isSelected}>
       <Txt color={COLORS.baseColors.gray950} textStyleName="P6">
         {name}
       </Txt>
