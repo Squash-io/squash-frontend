@@ -40,8 +40,31 @@ const UserMy = () => {
       data: [
         {
           id: 4,
-          repositoryName: 'TypeScript Master',
-          description: '타입스크립트 마스터가 될테야',
+          repositoryName: 'BigdataCampus',
+          description: '2021 서울특별시 빅데이터 캠퍼스 공모전',
+          language: 'Python',
+        },
+        {
+          id: 5,
+          repositoryName: 'Onbid_OpenAPI',
+          description: '온비드 OpenAPI를 사용한 공모전',
+          language: 'Kotlin',
+        },
+      ],
+    },
+    {
+      category: '유어슈',
+      data: [
+        {
+          id: 6,
+          repositoryName: 'YOURSSU_Assignment',
+          description: '2023 유어슈 입부 과제',
+          language: 'JavaScript',
+        },
+        {
+          id: 7,
+          repositoryName: 'YOURSSU-ts',
+          description: '타입스크립트를 이용한 todo list 구현',
           language: 'TypeScript',
         },
       ],
