@@ -6,9 +6,7 @@ const Feed = () => {
   return (
     <FeedContainer>
       <Banner />
-      <FeedBox>
-        <FeedList />
-      </FeedBox>
+      <FeedList />
     </FeedContainer>
   );
 };
