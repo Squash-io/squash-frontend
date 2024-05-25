@@ -1,5 +1,12 @@
+import GuestMy from '../../components/My/\bGuestMy/GuestMy';
+import { MyContainer } from './My.style';
+
 const My = () => {
-  return <div>my</div>;
+  return (
+    <MyContainer>
+      <GuestMy />
+    </MyContainer>
+  );
 };
 
 export default My;
