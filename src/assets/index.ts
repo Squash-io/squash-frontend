@@ -12,7 +12,7 @@ import IcGitHubSmall from './icon/fi_github_small.svg?react';
 import IcChervonsRight from './icon/fi_chevrons-right.svg?react';
 import IcGoal from './icon/goal_3dicons.svg?react';
 import IcNoGoal from './icon/noGoal_3dicons.svg?react';
-
+import IcGoalAdd from './icon/fi_goal-add.svg?react';
 export {
   IcBell,
   IcSquash,
@@ -28,4 +28,5 @@ export {
   IcChervonsRight,
   IcGoal,
   IcNoGoal,
+  IcGoalAdd,
 };
