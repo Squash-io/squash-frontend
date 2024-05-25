@@ -5,7 +5,6 @@ export const BannerContainer = styled.section`
   gap: 0.9rem;
   padding: 0.6rem 1.1rem;
   margin: 3.2rem 1.6rem 1.6rem 1.6rem;
-  width: 100%;
   height: 9.4rem;
   border-radius: 1.3rem;
   background: linear-gradient(268deg, #9da6fa 12.82%, #6ba4f9 96.34%);
