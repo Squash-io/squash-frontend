@@ -10,6 +10,8 @@ import IcDown from './icon/fi_chevron-down.svg?react';
 import IcUp from './icon/fi_chevron-up.svg?react';
 import IcGitHubSmall from './icon/fi_github_small.svg?react';
 import IcChervonsRight from './icon/fi_chevrons-right.svg?react';
+import IcGoal from './icon/goal_3dicons.svg?react';
+import IcNoGoal from './icon/noGoal_3dicons.svg?react';
 
 export {
   IcBell,
@@ -24,4 +26,6 @@ export {
   IcUp,
   IcGitHubSmall,
   IcChervonsRight,
+  IcGoal,
+  IcNoGoal,
 };
