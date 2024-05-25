@@ -1,10 +1,10 @@
-import GuestMy from '../../components/My/\bGuestMy/GuestMy';
+import UserMy from '../../components/My/UserMy/UserMy';
 import { MyContainer } from './My.style';
 
 const My = () => {
   return (
     <MyContainer>
-      <GuestMy />
+      <UserMy />
     </MyContainer>
   );
 };
