@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-export const FeedContainer = styled.section`
+export const MyContainer = styled.section`
   display: flex;
-  flex-direction: column;
   width: 100%;
-  padding-bottom: 15rem;
+  justify-content: center;
+  overflow-x: hidden;
   overflow-y: scroll;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
