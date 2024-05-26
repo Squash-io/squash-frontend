@@ -3,7 +3,17 @@ import { IcGoalAdd } from '../../../assets';
 import NoGoalBanner from './Banner/NoGoalBanner';
 import CategoryItem from './CategoryItem/CategoryItem';
 import RepositoryItem from './RepositoryItem/RepositoryItem';
-import { CategoryList, IconBox, RepositoryList, UserMyContainer } from './UserMy.style';
+import {
+  CategoryList,
+  GoalList,
+  IconBox,
+  MyGoal,
+  RepositoryList,
+  UserMyContainer,
+} from './UserMy.style';
+import GoalItem from './Goal/GoalItem';
+import { COLORS } from '../../../constants/Color/Color';
+import Txt from '../../../constants/Txt/Txt';
 
 const UserMy = () => {
   const [clickCategory, setClickCategory] = useState(0);
@@ -11,7 +21,7 @@ const UserMy = () => {
     setClickCategory(index);
   };
   const category = ['개인공부', '공모전', '유어슈', '우테코', '코테'];
-  const data = [
+  const repository = [
     {
       category: '개인공부',
       data: [
@@ -69,6 +79,44 @@ const UserMy = () => {
         },
       ],
     },
+    {
+      category: '우테코',
+      data: [
+        {
+          id: 8,
+          repositoryName: 'java-baseball-precourse',
+          description: '우아한 테크코스 야구 프리코스',
+          language: 'Java',
+        },
+      ],
+    },
+    {
+      category: '코테',
+      data: [
+        {
+          id: 9,
+          repositoryName: 'programmers',
+          description: '코테 뿌셔',
+          language: 'JavaScript',
+        },
+      ],
+    },
+  ];
+  const goal = [
+    {
+      id: 1,
+      goalTitle: '알고리즘 1일 1커밋',
+      period: 14,
+      startDate: 20240211,
+      repository: 'GDSCAlogrithm/JjungminCPP',
+    },
+    {
+      id: 2,
+      goalTitle: 'TIL',
+      period: 150,
+      startDate: 20231209,
+      repository: 'TIL',
+    },
   ];
   return (
     <UserMyContainer>
@@ -87,7 +135,7 @@ const UserMy = () => {
         <IcGoalAdd />
       </IconBox>
       <RepositoryList>
-        {data.map(
+        {repository.map(
           (list, index) =>
             index == clickCategory &&
             list.data.map((item) => (
@@ -100,6 +148,22 @@ const UserMy = () => {
             ))
         )}
       </RepositoryList>
+      <GoalList>
+        <MyGoal>
+          <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
+            내 목표
+          </Txt>
+        </MyGoal>
+        {goal.map((item) => (
+          <GoalItem
+            key={item.id}
+            goalTitle={item.goalTitle}
+            period={item.period}
+            startDate={item.startDate}
+            repository={item.repository}
+          />
+        ))}
+      </GoalList>
     </UserMyContainer>
   );
 };
