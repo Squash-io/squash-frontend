@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BannerContainer = styled.section`
+export const BannerContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.6rem 1.1rem;

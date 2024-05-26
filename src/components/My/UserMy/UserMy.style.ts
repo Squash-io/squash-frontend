@@ -14,16 +14,11 @@ export const CategoryList = styled.ul`
   padding-right: 10rem;
   gap: 2.8rem;
   width: 100%;
-  overflow-x: auto;
   white-space: nowrap;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 export const IconBox = styled.div`
   position: absolute;
-  top: 18.5rem;
+  top: 17.8rem;
   right: 0;
   transform: translateY(-50%);
   background-color: ${COLORS.baseColors.gray000};
@@ -34,4 +29,15 @@ export const RepositoryList = styled.ul`
   flex-direction: column;
   margin: 0 1.6rem;
   gap: 1.3rem;
+`;
+export const GoalList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin: 4.3rem 1.6rem;
+  padding-bottom: 20rem;
+  gap: 1.3rem;
+`;
+export const MyGoal = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
 `;
