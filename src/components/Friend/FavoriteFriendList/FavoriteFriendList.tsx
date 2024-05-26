@@ -4,7 +4,7 @@ import { COLORS } from '../../../constants/Color/Color';
 import { Container, TitleContainer, ListContainer } from './FavoriteFriendList.style';
 import { IcUp, IcDown } from '../../../assets';
 import { FavoriteFriendItem } from '../FavoriteFriendItem/FavoriteFriendItem';
-import { count, dummyFavoriteFriendList as user } from '../dummyData';
+import { favoriteFriendCount, dummyFavoriteFriendList as user } from '../dummyData';
 
 export const FavoriteFriendList = () => {
   const [isOpen, setIsDown] = useState(true);
@@ -20,7 +20,7 @@ export const FavoriteFriendList = () => {
           즐겨찾기
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P2">
-          {count}
+          {favoriteFriendCount}
         </Txt>
         {isOpen ? (
           <div className="btn-toggle">

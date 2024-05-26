@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 interface User {
   profile: string;
   id: string;
-  isFavorite: boolean;
+  isStarred: boolean;
 }
 
 interface FriendItemProps {

@@ -21,4 +21,12 @@ export const ListContainer = styled.section`
   flex-direction: column;
   row-gap: 2.4rem;
   margin: 1.6rem;
+
+  overflow-y: scroll;
+
+  // 스크롤 바 안 생기게
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

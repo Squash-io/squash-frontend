@@ -2,7 +2,7 @@ import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { Container, TitleContainer, ListContainer } from './FriendList.style';
 import { FriendItem } from '../FriendItem/FriendItem';
-import { count, dummyFriendList as user } from '../dummyData';
+import { friendCount, dummyFriendList as user } from '../dummyData';
 
 export const FriendList = () => {
   return (
@@ -12,7 +12,7 @@ export const FriendList = () => {
           친구
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="B1">
-          {count}
+          {friendCount}
         </Txt>
       </TitleContainer>
       <ListContainer>
