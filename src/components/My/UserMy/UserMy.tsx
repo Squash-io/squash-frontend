@@ -14,12 +14,21 @@ import {
 import GoalItem from './Goal/GoalItem';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
+import { useNavigate } from 'react-router-dom';
 
 const UserMy = () => {
+  const navigate = useNavigate();
   const [clickCategory, setClickCategory] = useState(0);
   const handleClickCategory = (index: number) => {
     setClickCategory(index);
   };
+  const handleCategoryAdd = () => {
+    navigate('/my/category');
+  };
+  const handleGoalAdd = () => {
+    navigate('/my/goal');
+  };
+
   const category = ['개인공부', '공모전', '유어슈', '우테코', '코테'];
   const repository = [
     {
@@ -120,7 +129,9 @@ const UserMy = () => {
   ];
   return (
     <UserMyContainer>
-      <NoGoalBanner />
+      <div onClick={handleGoalAdd}>
+        <NoGoalBanner />
+      </div>
       <CategoryList>
         {category.map((item, index) => (
           <CategoryItem
@@ -131,7 +142,7 @@ const UserMy = () => {
           />
         ))}
       </CategoryList>
-      <IconBox>
+      <IconBox onClick={handleCategoryAdd}>
         <IcGoalAdd />
       </IconBox>
       <RepositoryList>
