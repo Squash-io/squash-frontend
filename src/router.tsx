@@ -7,6 +7,8 @@ import My from './pages/My/My';
 import FriendDetail from './pages/FriendDetail/FriendDetail';
 import FeedDetail from './pages/FeedDetail/FeedDetail';
 import LoginRedirectPage from './pages/Login/LoginRedirectPage';
+import CreateCategory from './components/My/CreateCategory/CreateCategory';
+import CreateGoal from './components/My/CreateGoal/CreateGoal';
 
 export const Router = () => {
   return (
@@ -20,6 +22,8 @@ export const Router = () => {
           <Route path="/friend" element={<Friend />} />
           <Route path="/friendDetail" element={<FriendDetail />} />
           <Route path="/my" element={<My />} />
+          <Route path="/my/category" element={<CreateCategory />} />
+          <Route path="/my/goal" element={<CreateGoal />} />
         </Route>
       </Route>
       <Route path="/*" element={<Home />} />

@@ -9,6 +9,8 @@ const Banner = () => {
 
   const handleLoginClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    console.log(clientId);
+    console.log(redirectUrl);
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}`;
   };
   return (
