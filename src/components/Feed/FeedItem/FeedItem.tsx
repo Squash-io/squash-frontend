@@ -4,7 +4,7 @@ import Txt from '../../../constants/Txt/Txt';
 import { getIconByCategory } from '../../../utils/iconUtils';
 import ProfileInfo from '../../@common/ProfileInfo/ProfileInfo';
 import { FeedContainer } from '../FeedList/FeedList.style';
-import { ActivityContainer, ActivityText, LanguageBox, LanguageColor } from './FeedItem.style';
+import { ActivityContainer, ActivityText } from './FeedItem.style';
 
 export interface FeedProps {
   id: number;
@@ -13,12 +13,9 @@ export interface FeedProps {
   image: string;
   category: string;
   activityTitle: string;
-  activitySubTitle: string | null;
-  language: string | null;
 }
 const FeedItem = (props: FeedProps) => {
-  const { id, name, repository, image, category, activityTitle, activitySubTitle, language } =
-    props;
+  const { id, name, repository, image, category, activityTitle } = props;
   const navigate = useNavigate();
   const handleToMoveFeedDetail = () => {
     navigate('/feedDetail', {
@@ -32,21 +29,8 @@ const FeedItem = (props: FeedProps) => {
         {getIconByCategory(category)}
         <ActivityText>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
-            {activityTitle}
+            {activityTitle.length < 40 ? activityTitle : activityTitle.slice(0, 28) + '...'}
           </Txt>
-          {activitySubTitle && (
-            <Txt color={COLORS.baseColors.gray400} textStyleName="P6">
-              {activitySubTitle}
-            </Txt>
-          )}
-          {language && (
-            <LanguageBox>
-              <LanguageColor $language={language} />
-              <Txt color={COLORS.baseColors.gray800} textStyleName="P6">
-                {language}
-              </Txt>
-            </LanguageBox>
-          )}
         </ActivityText>
       </ActivityContainer>
     </FeedContainer>

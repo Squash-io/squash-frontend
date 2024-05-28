@@ -18,7 +18,7 @@ const ProfileInfo = (props: ProfileProps) => {
           {name}
         </Txt>
         <Txt color={COLORS.baseColors.gray400} textStyleName="P4">
-          {repository}
+          {repository.length < 35 ? repository : repository.slice(0, 35) + '...'}
         </Txt>
       </InfoText>
     </InfoContainer>
