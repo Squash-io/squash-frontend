@@ -6,7 +6,7 @@ import { FeedTitleBox, FeedTitleContainer } from './FeedTitle.style';
 
 interface FeedTitleProps {
   title: string;
-  day: number;
+  day: string;
   category: string;
 }
 const FeedTitle = (props: FeedTitleProps) => {
@@ -19,7 +19,7 @@ const FeedTitle = (props: FeedTitleProps) => {
           {title}
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
-          {formatToTodayOrDate(day)}
+          {formatToTodayOrDate(parseInt(day))}
         </Txt>
       </FeedTitleBox>
     </FeedTitleContainer>

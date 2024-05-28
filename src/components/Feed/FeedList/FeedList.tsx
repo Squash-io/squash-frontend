@@ -27,7 +27,7 @@ const FeedList = () => {
           {groupedFeed[date].map((item) => (
             <FeedItem
               key={item.feedId}
-              id={item.memberId}
+              id={item.feedId}
               name={item.userName}
               repository={item.repoUrl}
               image={item.profileImageUrl}
