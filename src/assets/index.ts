@@ -6,6 +6,7 @@ import IcPullRequest from './icon/fi_git-pull-request.svg?react';
 import IcCommit from './icon/fi_git-commit.svg?react';
 import IcAlertCircle from './icon/fi_alert-circle.svg?react';
 import IcStar from './icon/fi_star.svg?react';
+import IcStarFill from './icon/fi_star_fill.svg?react';
 import IcDown from './icon/fi_chevron-down.svg?react';
 import IcUp from './icon/fi_chevron-up.svg?react';
 import IcGitHubSmall from './icon/fi_github_small.svg?react';
@@ -22,6 +23,7 @@ export {
   IcCommit,
   IcAlertCircle,
   IcStar,
+  IcStarFill,
   IcDown,
   IcUp,
   IcGitHubSmall,
