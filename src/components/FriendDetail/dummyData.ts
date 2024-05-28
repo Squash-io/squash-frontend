@@ -16,8 +16,8 @@ export const dummyFriendActivity = [
       {
         id: 3,
         category: 'pr',
-        activityTitle: 'FEAT : 버튼 컴포넌트 개발',
-        activitySubTitle: '나왜또버튼만들어',
+        activityTitle: 'FIX : Merge Conflict',
+        activitySubTitle: '',
         repositoryImg: imgProfile,
         repository: 'YourSSU/YDSAndroid',
         language: 'Kotlin',
