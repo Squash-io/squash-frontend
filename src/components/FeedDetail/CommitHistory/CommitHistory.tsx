@@ -1,21 +1,22 @@
-import { IcCommit, IcPullRequest } from '../../../assets';
+import { IcCommit } from '../../../assets';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
-import { CommitHistoryBox } from './CommitHistory.style';
+import { CommitHistoryBox, TextBox } from './CommitHistory.style';
 
 interface CommitHistoryProps {
-  commitMessage?: string;
-  relatedPr?: string;
+  commitMessage: string;
+  category: string;
 }
 const CommitHistory = (props: CommitHistoryProps) => {
-  const { commitMessage, relatedPr } = props;
+  const { commitMessage } = props;
   return (
     <CommitHistoryBox>
-      {relatedPr ? <IcPullRequest /> : <IcCommit />}
-      <Txt color={COLORS.baseColors.gray500} textStyleName="P4">
-        {relatedPr}
-        {commitMessage}
-      </Txt>
+      <IcCommit />
+      <TextBox>
+        <Txt color={COLORS.baseColors.gray500} textStyleName="P4">
+          {commitMessage}
+        </Txt>
+      </TextBox>
     </CommitHistoryBox>
   );
 };

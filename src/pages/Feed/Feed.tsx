@@ -1,11 +1,12 @@
 import Banner from '../../components/Feed/Banner/Banner';
 import FeedList from '../../components/Feed/FeedList/FeedList';
+import api from '../../service/TokenService';
 import { FeedContainer } from './Feed.style';
 
 const Feed = () => {
   return (
     <FeedContainer>
-      <Banner />
+      {!api.getAccessToken() && <Banner />}
       <FeedList />
     </FeedContainer>
   );

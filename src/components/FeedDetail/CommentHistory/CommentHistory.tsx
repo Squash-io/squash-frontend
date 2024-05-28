@@ -10,7 +10,7 @@ import {
 interface CommentProps {
   count?: number;
   id: number;
-  profile: string;
+  profile?: string;
   writer: string;
   comment: string;
 }
