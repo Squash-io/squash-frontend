@@ -9,7 +9,7 @@ export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin: 1.6rem;
+  margin: 2.4rem 1.6rem 0.8rem 1.6rem;
 
   .btn-toggle {
     margin-left: auto;

@@ -2,9 +2,10 @@ import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { Container, TitleContainer, ListContainer } from './FriendList.style';
 import { FriendItem } from '../FriendItem/FriendItem';
-import { friendCount, dummyFriendList as user } from '../dummyData';
 
-export const FriendList = () => {
+export const FriendList = (props: FriendListRes) => {
+  const { sum, friends, onLikeToggle } = props;
+
   return (
     <Container>
       <TitleContainer>
@@ -12,12 +13,23 @@ export const FriendList = () => {
           친구
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="B1">
-          {friendCount}
+          {sum}
         </Txt>
       </TitleContainer>
       <ListContainer>
-        {user.map((item, index) => (
-          <FriendItem key={index} user={item} />
+        {friends.map((item, index) => (
+          <FriendItem
+            key={item.friendId}
+            friendId={item.friendId}
+            memberId={item.memberId}
+            avartarUrl={item.avartarUrl}
+            githubName={item.githubName}
+            userName={item.userName}
+            bio={item.bio}
+            isStarred={item.isStarred}
+            // setIsStarred={setIsStarred}
+            onLikeToggle={onLikeToggle}
+          />
         ))}
       </ListContainer>
     </Container>
