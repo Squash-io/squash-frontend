@@ -29,7 +29,9 @@ const FeedItem = (props: FeedProps) => {
         {getIconByCategory(category)}
         <ActivityText>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
-            {activityTitle}
+            {activityTitle && activityTitle.length < 40
+              ? activityTitle
+              : activityTitle?.slice(0, 60) + '...'}
           </Txt>
         </ActivityText>
       </ActivityContainer>

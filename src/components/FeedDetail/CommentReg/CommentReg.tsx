@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { CommentInput, CommentRegContainer, RegButton } from './CommentReg.style';

@@ -7,12 +7,20 @@ import CommitHistory from '../../components/FeedDetail/CommitHistory/CommitHisto
 import CommentHistory from '../../components/FeedDetail/CommentHistory/CommentHistory';
 import CommentReg from '../../components/FeedDetail/CommentReg/CommentReg';
 import useGetFeedDetail from '../../hooks/useGetFeedDetail';
+import useGetComment from '../../hooks/useGetComment';
 
+interface commentDataTypes {
+  id: number;
+  userName: string;
+  memberId: number;
+  comment: string;
+}
 const FeedDetail = () => {
   const location = useLocation();
   const { id } = location.state;
   const { data } = useGetFeedDetail(id);
-  if (!data) {
+  const commentData = useGetComment(id);
+  if (!data || !commentData.data) {
     return <></>;
   }
   const timeToday = data.time.split('T')[0].replace(/-/g, '');
@@ -36,16 +44,17 @@ const FeedDetail = () => {
       </CommitCotainer>
       <GithubShortCut />
       <CommentCotainer>
-        {/* {feed[0].comment?.map((item) => (
-          <CommentHistory
-            key={item.id}
-            count={feed[0].comment?.length}
-            id={item.id}
-            profile={item.profile}
-            writer={item.writer}
-            comment={item.comment}
-          />
-        ))} */}
+        {commentData.data.length > 0 &&
+          commentData.data.map((item: commentDataTypes) => (
+            <CommentHistory
+              key={item.id}
+              count={item.comment?.length}
+              id={item.id}
+              // profile={item.profile}
+              writer={item.userName}
+              comment={item.comment}
+            />
+          ))}
       </CommentCotainer>
       <CommentReg feedId={data.feedId} />
     </FeedDetailContainer>
