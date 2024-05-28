@@ -47,7 +47,7 @@ const FeedDetail = () => {
           />
         ))} */}
       </CommentCotainer>
-      <CommentReg />
+      <CommentReg feedId={data.feedId} />
     </FeedDetailContainer>
   );
 };
