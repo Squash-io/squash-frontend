@@ -1,6 +1,7 @@
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import useGetFeed from '../../../hooks/useGetFeed';
+import useGetGuestFeed from '../../../hooks/useGetGuestFeed';
 import api from '../../../service/TokenService';
 import { formatToTodayOrDate } from '../../../utils/dateUtils';
 import groupFeedByDate from '../../../utils/groupFeedByDate';
@@ -8,10 +9,8 @@ import FeedItem from '../FeedItem/FeedItem';
 import { FeedListContainer } from './FeedList.style';
 
 const FeedList = () => {
-  if (!api.getAccessToken()) {
-    return <>Unauthorized</>;
-  }
-  const { data } = useGetFeed(0);
+  const { data } = api.getAccessToken() ? useGetFeed(0) : useGetGuestFeed(0);
+
   if (!data) {
     return <></>;
   }
@@ -33,7 +32,11 @@ const FeedList = () => {
               repository={item.repoUrl}
               image={item.profileImageUrl}
               category={item.commitType}
-              activityTitle={item.commitMessages[item.commitMessages.length - 1].commitLog.slice(6)}
+              activityTitle={
+                item.commitMessages.length > 0
+                  ? item.commitMessages[item.commitMessages.length - 1].commitLog.slice(6)
+                  : ''
+              }
             />
           ))}
         </FeedListContainer>
