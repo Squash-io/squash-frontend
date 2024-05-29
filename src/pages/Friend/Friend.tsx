@@ -10,7 +10,7 @@ import { postLike } from '../../apis/postLike';
 const Friend = () => {
   const [friendList, setFriendList] = useState<Friend[]>([]);
   const [favoriteFriendList, setFavoriteFriendList] = useState<Friend[]>([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const currentPage = 0; // <------------------ 페이징 처리 위한 임시 변수
   const [trigger, setTrigger] = useState(false); // 트리거 상태 추가
 
   const onLikeToggle = async (friendId: number, isLiked: boolean) => {
@@ -50,12 +50,7 @@ const Friend = () => {
         friends={favoriteFriendList}
         onLikeToggle={onLikeToggle}
       />
-      <FriendList
-        sum={friendList.length}
-        friends={friendList}
-        // setIsStarred={setIsStarred}
-        onLikeToggle={onLikeToggle}
-      />
+      <FriendList sum={friendList.length} friends={friendList} onLikeToggle={onLikeToggle} />
     </FriendContainer>
   );
 };

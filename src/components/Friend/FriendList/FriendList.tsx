@@ -17,7 +17,7 @@ export const FriendList = (props: FriendListRes) => {
         </Txt>
       </TitleContainer>
       <ListContainer>
-        {friends.map((item, index) => (
+        {friends.map((item) => (
           <FriendItem
             key={item.friendId}
             friendId={item.friendId}

@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { IcStar, IcStarFill } from '../../../assets';
 import { FavoriteFriendItemContainer, FriendInfoContainer } from './FavoriteFriendItem.style';
 import { useNavigate } from 'react-router-dom';
-import { postLike } from '../../../apis/postLike';
 
 export const FavoriteFriendItem = (props: Friend) => {
   const { friendId, memberId, avartarUrl, githubName, userName, bio, isStarred, onLikeToggle } =

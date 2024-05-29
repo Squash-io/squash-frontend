@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { IcStar, IcStarFill } from '../../../assets';
