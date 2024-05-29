@@ -18,7 +18,7 @@ export const CategoryList = styled.ul`
 `;
 export const IconBox = styled.div`
   position: absolute;
-  top: 17.8rem;
+  top: 18.6rem;
   right: 0;
   transform: translateY(-50%);
   background-color: ${COLORS.baseColors.gray000};
