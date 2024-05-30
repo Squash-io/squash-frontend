@@ -12,3 +12,4 @@ export const FeedContainer = styled.div`
   gap: 1.6rem;
   cursor: pointer;
 `;
+export const LoadMore = styled.div``;
