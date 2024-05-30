@@ -5,12 +5,17 @@ import { Container, FriendInfoContainer } from './FriendInfo.style';
 
 export const FriendInfo = (props: FriendDetail) => {
   const { avartarUrl, githubName, userName, bio, isStarred } = props;
+
+  const handleClick = async () => {
+    window.location.href = `https://github.com/${githubName}`;
+  };
+
   return (
     <Container>
       <div>
-        <img src={avartarUrl} alt="프로필 사진"></img>
+        <img className="profile" src={avartarUrl} alt="프로필 사진"></img>
       </div>
-      <FriendInfoContainer>
+      <FriendInfoContainer onClick={handleClick}>
         <Txt color={COLORS.baseColors.gray950} textStyleName="P3">
           {githubName}
         </Txt>
