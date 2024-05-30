@@ -6,14 +6,6 @@ export const Container = styled.section`
   row-gap: 1.2rem;
   margin: 1.6rem;
   cursor: pointer;
-
-  overflow-y: scroll;
-
-  // 스크롤 바 안 생기게
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const ActivityListContainer = styled.div`

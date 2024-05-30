@@ -5,52 +5,35 @@ import {
   InfoContainer,
   ItemContainer,
   RepositoryContainer,
-  RepoLangContainer,
-  LanguageColor,
-  LanguageContainer,
 } from './ActivityItem.style';
 import { getIconByCategory } from '../../../utils/iconUtils';
+import { useNavigate } from 'react-router-dom';
 
-interface ActivityProps {
-  props: {
-    category: string;
-    activityTitle: string;
-    activitySubTitle: string | null;
-    repositoryImg: string;
-    repository: string;
-    language: string;
+export const ActivityItem = (props: ActivityItemProps) => {
+  const { id, commitType, activityTitle, repoUrl } = props;
+  const navigate = useNavigate();
+
+  const handleToMoveFeedDetail = () => {
+    navigate('/feedDetail', {
+      state: { id: id },
+    });
   };
-}
 
-export const ActivityItem = ({ props }: ActivityProps) => {
-  const { category, activityTitle, activitySubTitle, repositoryImg, repository, language } = props;
   return (
-    <ItemContainer>
+    <ItemContainer onClick={handleToMoveFeedDetail}>
       <GraphContainer>
-        <div>{getIconByCategory(category)}</div>
+        <div>{getIconByCategory(commitType)}</div>
         <div className="day-line"></div>
       </GraphContainer>
       <InfoContainer>
         <Txt color={COLORS.baseColors.gray950} textStyleName="P4" className="activityTitle">
           {activityTitle}
         </Txt>
-        <Txt color={COLORS.baseColors.gray500} textStyleName="P6" className="activitySubTitle">
-          {activitySubTitle}
-        </Txt>
-        <RepoLangContainer>
-          <RepositoryContainer>
-            <img src={repositoryImg} className="repositoryImg"></img>
-            <Txt color={COLORS.baseColors.gray500} textStyleName="P7">
-              @{repository}
-            </Txt>
-          </RepositoryContainer>
-          <LanguageContainer>
-            <LanguageColor $language={language} />
-            <Txt color={COLORS.baseColors.gray800} textStyleName="P6" className="language">
-              {language}
-            </Txt>
-          </LanguageContainer>
-        </RepoLangContainer>
+        <RepositoryContainer>
+          <Txt color={COLORS.baseColors.gray500} textStyleName="P7">
+            @{repoUrl}
+          </Txt>
+        </RepositoryContainer>
       </InfoContainer>
     </ItemContainer>
   );

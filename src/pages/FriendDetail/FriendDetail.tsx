@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 const FriendDetail = () => {
   const { state } = useLocation();
   const { friendId, memberId, avartarUrl, githubName, userName, bio, isStarred } = state;
+
   return (
     <FriendDetailContainer>
       <FriendInfo
@@ -17,7 +18,7 @@ const FriendDetail = () => {
         bio={bio}
         isStarred={isStarred}
       ></FriendInfo>
-      <ActivityList></ActivityList>
+      <ActivityList friendId={friendId} />
     </FriendDetailContainer>
   );
 };
