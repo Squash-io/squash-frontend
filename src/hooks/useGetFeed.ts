@@ -1,16 +1,18 @@
 import { getFeed } from '../apis/getFeed';
-import { useQuery } from 'react-query';
+import { useInfiniteQuery } from 'react-query';
 
 const QUERY_KEY = {
   getFeed: 'getFeed',
 };
-export const useGetFeed = (page: number) => {
-  const data = useQuery(QUERY_KEY.getFeed, () => getFeed(page), {
+export const useGetFeed = () => {
+  return useInfiniteQuery(QUERY_KEY.getFeed, ({ pageParam = 0 }) => getFeed(pageParam), {
+    getNextPageParam: (lastPage) => {
+      return lastPage.last ? undefined : lastPage.pageable.pageNumber + 1;
+    },
     onError: (error) => {
       console.log('에러 발생', error);
     },
   });
-  return data;
 };
 
 export default useGetFeed;
