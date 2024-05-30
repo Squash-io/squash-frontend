@@ -53,7 +53,7 @@ const FeedList = () => {
   const sortedDates = Object.keys(groupedFeed).sort((a, b) => parseInt(b) - parseInt(a));
 
   return (
-    <FeedListWrapper>
+    <>
       {sortedDates.map((date) => (
         <FeedListContainer key={date}>
           <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
@@ -76,8 +76,8 @@ const FeedList = () => {
           ))}
         </FeedListContainer>
       ))}
-      <LoadMore id="loadMore" style={{ height: '10px' }} />
-    </FeedListWrapper>
+      <LoadMore id="loadMore" style={{ height: '0px' }} />
+    </>
   );
 };
 

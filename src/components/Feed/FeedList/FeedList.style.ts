@@ -12,8 +12,4 @@ export const FeedContainer = styled.div`
   gap: 1.6rem;
   cursor: pointer;
 `;
-export const FeedListWrapper = styled.div`
-  height: 100vh;
-  overflow-y: auto;
-`;
 export const LoadMore = styled.div``;
