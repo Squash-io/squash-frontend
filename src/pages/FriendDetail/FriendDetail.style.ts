@@ -5,5 +5,12 @@ export const FriendDetailContainer = styled.section`
   height: calc(100% - 12rem);
   display: flex;
   flex-direction: column;
-  row-gap: 1.2rem;
+
+  overflow-y: scroll;
+
+  // 스크롤 바 안 생기게
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
