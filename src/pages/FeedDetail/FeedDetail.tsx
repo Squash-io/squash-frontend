@@ -26,7 +26,11 @@ const FeedDetail = () => {
   const timeToday = data.time.split('T')[0].replace(/-/g, '');
   return (
     <FeedDetailContainer>
-      <ProfileInfo name={data.userName} repository={data.repoUrl} image={data.profileImageUrl} />
+      <ProfileInfo
+        name={data.userName}
+        repository={data.repoUrl.replace('https://github.com/', '').split('/commit/')[0]}
+        image={data.profileImageUrl}
+      />
       <FeedTitle
         title={data.commitMessages[data.commitMessages.length - 1].commitLog.slice(6)}
         day={timeToday}
@@ -42,7 +46,7 @@ const FeedDetail = () => {
             />
           ))}
       </CommitCotainer>
-      <GithubShortCut />
+      <GithubShortCut githubUrl={data.repoUrl} />
       <CommentCotainer>
         {commentData.data.length > 0 &&
           commentData.data.map((item: commentDataTypes) => (
