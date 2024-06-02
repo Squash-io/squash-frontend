@@ -1,16 +1,20 @@
 import { IcChevronRight } from '../../../../assets';
 import { COLORS } from '../../../../constants/Color/Color';
 import Txt from '../../../../constants/Txt/Txt';
-import { LanguageBox, LanguageColor } from '../../../Feed/FeedItem/FeedItem.style';
+
 import { RepositoryInfo, RepositoryItemContainer, RepositoryTitle } from './RepositoryItem.style';
 
 export interface RepositoryItemProps {
   repoName: string;
   description: string;
-  language: string;
+  url: string;
 }
 const RepositoryItem = (props: RepositoryItemProps) => {
-  const { repoName, description, language } = props;
+  const { repoName, description, url } = props;
+
+  const handleUrlClick = () => {
+    window.location.href = url;
+  };
   return (
     <RepositoryItemContainer>
       <RepositoryInfo>
@@ -18,18 +22,14 @@ const RepositoryItem = (props: RepositoryItemProps) => {
           <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
             {repoName}
           </Txt>
-          <IcChevronRight />
+          <button onClick={handleUrlClick}>
+            <IcChevronRight />
+          </button>
         </RepositoryTitle>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
           {description}
         </Txt>
       </RepositoryInfo>
-      <LanguageBox>
-        <LanguageColor $language={language} />
-        <Txt color={COLORS.baseColors.gray800} textStyleName="P6">
-          {language}
-        </Txt>
-      </LanguageBox>
     </RepositoryItemContainer>
   );
 };
