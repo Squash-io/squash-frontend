@@ -15,6 +15,7 @@ import IcGoal from './icon/goal_3dicons.svg?react';
 import IcNoGoal from './icon/noGoal_3dicons.svg?react';
 import IcGoalAdd from './icon/fi_goal-add.svg?react';
 import IcFork from './icon/fi_git-fork.svg?react';
+import IcFab from './icon/fab.svg?react';
 export {
   IcBell,
   IcSquash,
@@ -33,4 +34,5 @@ export {
   IcNoGoal,
   IcGoalAdd,
   IcFork,
+  IcFab,
 };
