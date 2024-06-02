@@ -1,8 +1,6 @@
 import { customedAxios } from './customedAxios';
 import api from '../service/TokenService';
 
-const accessToken = api.getAccessToken();
-
 export const postLike = async (data: PostLikeReq): Promise<PostLikeRes> => {
   const res = await customedAxios.post(
     `/members/friends/${data.friendId}/likes`,
@@ -12,9 +10,9 @@ export const postLike = async (data: PostLikeReq): Promise<PostLikeRes> => {
         isLiked: data.isLiked,
       },
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${api.getAccessToken()}`,
       },
     }
   );
-  return res.data;
+  return { status: res.status };
 };

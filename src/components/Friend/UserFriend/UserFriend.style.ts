@@ -6,6 +6,7 @@ export const FriendContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  cursor: pointer;
 
   // 스크롤 바 안 생기게
   -ms-overflow-style: none;
