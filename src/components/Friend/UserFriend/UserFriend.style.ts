@@ -1,17 +1,5 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.section`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
 export const FriendContainer = styled.div`
   width: 100%;
   height: calc(100% - 12rem);
