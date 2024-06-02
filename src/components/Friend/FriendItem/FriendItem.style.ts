@@ -18,3 +18,16 @@ export const FriendItemContainer = styled.div`
     box-sizing: content-box;
   }
 `;
+
+export const FriendInfoContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+
+  .user-description {
+    width: 100%;
+  }
+`;

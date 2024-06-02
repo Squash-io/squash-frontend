@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { COLORS } from '../../../constants/Color/Color';
 
 export const ItemContainer = styled.div`
   display: flex;
@@ -23,22 +22,16 @@ export const InfoContainer = styled.div`
   word-break: break-all;
   align-items: center;
   width: 100%;
-  row-gap: 0.6rem;
-  padding: 0.4rem 0rem 1.6rem 0rem;
+  row-gap: 0.8rem;
+  padding: 0.4rem 0rem 2rem 0rem;
   box-sizing: content-box;
 
   .activityTitle {
-    width: 100%;
+    width: 90%;
   }
   .activitySubTitle {
     width: 100%;
   }
-`;
-
-export const RepoLangContainer = styled.div`
-  display: flex;
-  column-gap: 0.8rem;
-  align-items: center;
 `;
 
 export const RepositoryContainer = styled.div`
@@ -54,18 +47,4 @@ export const RepositoryContainer = styled.div`
     height: 1.2rem;
     border-radius: 0.2rem;
   }
-`;
-
-export const LanguageContainer = styled.div`
-  display: flex;
-  column-gap: 0.4rem;
-  align-items: center;
-`;
-
-export const LanguageColor = styled.div<{ $language: string }>`
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background-color: ${({ $language }) =>
-    COLORS.languageColors[$language as keyof typeof COLORS.languageColors]};
 `;

@@ -20,6 +20,10 @@ export const ActivityText = styled.div`
   flex-direction: column;
   gap: 0.8rem;
   text-align: left;
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 `;
 export const LanguageBox = styled.div`
   display: flex;
