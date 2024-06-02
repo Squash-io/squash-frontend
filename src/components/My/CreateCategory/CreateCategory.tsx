@@ -4,32 +4,25 @@ import { COLORS } from '../../../constants/Color/Color';
 import RepositoryItem from '../RepositoryItem/RepositoryItem';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getRepository } from '../../../apis/getRepository';
+
 import { useState } from 'react';
 import { RespositoriesInteface } from '../../../types/My';
+import useGetRepository from '../../../hooks/useGetRepository';
 const CreateCategory = () => {
   const [repositories, setRepositories] = useState<RespositoriesInteface[]>();
   const navigate = useNavigate();
+  const { data } = useGetRepository();
   const handleConfirmClick = () => {
     navigate('/my');
   };
+
   useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      try {
-        const data = await getRepository();
-        if (data && Array.isArray(data)) {
-          const repositoriesData = data.flatMap((item) => item.repositories);
+    if (data) {
+      const repositoriesData = data.flatMap((item) => item.repositories);
 
-          setRepositories((prev) => [...(prev || []), ...repositoriesData]);
-        }
-      } catch (error) {
-        console.error('Failed to fetch repositories:', error);
-      }
-    };
-
-    fetchData();
+      setRepositories((prev) => [...(prev || []), ...repositoriesData]);
+    }
   }, []);
-  console.log(repositories);
   // @todo : recoil로 select된 레포들 id 관리해서 id배열에 넣고 서버에 데이터 보내기
   return (
     <styles.CreateCategoryContainer>

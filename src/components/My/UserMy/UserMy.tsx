@@ -16,11 +16,12 @@ import GoalItem from './Goal/GoalItem';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { useNavigate } from 'react-router-dom';
-import { getRepository } from '../../../apis/getRepository';
 import { CategoryInterface, RepositoryInterface } from '../../../types/My';
+import useGetRepository from '../../../hooks/useGetRepository';
 
 const UserMy = () => {
   const navigate = useNavigate();
+  const { data } = useGetRepository();
   const [categories, setCategories] = useState<CategoryInterface[]>();
   const [repositories, setRepositories] = useState<RepositoryInterface[]>();
   const [clickCategory, setClickCategory] = useState(0);
@@ -34,24 +35,14 @@ const UserMy = () => {
     navigate('/my/goal');
   };
   useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      try {
-        const data = await getRepository();
-        if (data && Array.isArray(data)) {
-          // 카테고리와 리포지터리 데이터를 추출
-          const categoryData = data.map((item) => item.category);
-          const repositoriesData = data.flatMap((item) => item);
+    if (data) {
+      const categoryData = data.map((item) => item.category);
+      const repositoriesData = data.flatMap((item) => item);
 
-          // 기존 카테고리와 리포지터리 상태를 유지하며 새 데이터 추가
-          setCategories((prev) => [...(prev || []), ...categoryData]);
-          setRepositories((prev) => [...(prev || []), ...repositoriesData]);
-        }
-      } catch (error) {
-        console.error('Failed to fetch repositories:', error);
-      }
-    };
-
-    fetchData();
+      // 기존 카테고리와 리포지터리 상태를 유지하며 새 데이터 추가
+      setCategories((prev) => [...(prev || []), ...categoryData]);
+      setRepositories((prev) => [...(prev || []), ...repositoriesData]);
+    }
   }, []);
 
   // const category = ['개인공부', '공모전', '유어슈', '우테코', '코테'];
