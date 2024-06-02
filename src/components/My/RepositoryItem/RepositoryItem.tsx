@@ -7,7 +7,7 @@ interface RepositoryItemInterface {
   title: string;
   description: string;
 }
-const RepositoryItem = ({ id, title, description }: RepositoryItemInterface) => {
+const RepositoryItem = ({ title, description }: RepositoryItemInterface) => {
   const [selectRepo, setSelectRepo] = useState(false);
   return (
     <styles.RepositoryContainer

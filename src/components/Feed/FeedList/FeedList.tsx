@@ -7,7 +7,7 @@ import api from '../../../service/TokenService';
 import { formatToTodayOrDate } from '../../../utils/dateUtils';
 import groupFeedByDate from '../../../utils/groupFeedByDate';
 import FeedItem from '../FeedItem/FeedItem';
-import { FeedListContainer, FeedListWrapper, LoadMore } from './FeedList.style';
+import { FeedListContainer, LoadMore } from './FeedList.style';
 
 const FeedList = () => {
   const accessToken = api.getAccessToken();
