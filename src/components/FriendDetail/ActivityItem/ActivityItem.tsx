@@ -7,6 +7,7 @@ import {
   RepositoryContainer,
 } from './ActivityItem.style';
 import { getIconByCategory } from '../../../utils/iconUtils';
+import { parseRepo } from '../../../utils/parseRepo';
 import { useNavigate } from 'react-router-dom';
 
 export const ActivityItem = (props: ActivityItemProps) => {
@@ -31,7 +32,7 @@ export const ActivityItem = (props: ActivityItemProps) => {
         </Txt>
         <RepositoryContainer>
           <Txt color={COLORS.baseColors.gray500} textStyleName="P7">
-            @{repoUrl}
+            @{parseRepo(repoUrl)}
           </Txt>
         </RepositoryContainer>
       </InfoContainer>
