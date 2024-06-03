@@ -22,7 +22,7 @@ const CreateCategory = () => {
 
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
     }
-  }, []);
+  }, [data]);
   // @todo : recoil로 select된 레포들 id 관리해서 id배열에 넣고 서버에 데이터 보내기
   return (
     <styles.CreateCategoryContainer>

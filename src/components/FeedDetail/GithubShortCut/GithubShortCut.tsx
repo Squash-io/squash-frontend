@@ -3,10 +3,18 @@ import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { GithubShortCutContainer, ShortCutButtonContainer } from './GithubShortCut.style';
 
-const GithubShortCut = () => {
+interface GithubShortCutProps {
+  githubUrl: string;
+}
+const GithubShortCut = (props: GithubShortCutProps) => {
+  const { githubUrl } = props;
+  const handleClick = async () => {
+    window.location.href = `${githubUrl}`;
+  };
+
   return (
     <GithubShortCutContainer>
-      <ShortCutButtonContainer type="button">
+      <ShortCutButtonContainer type="button" onClick={handleClick}>
         <IcGitHubSmall />
         <Txt color={COLORS.baseColors.gray950} textStyleName="P7">
           깃허브에서 확인하기
