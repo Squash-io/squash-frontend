@@ -14,7 +14,7 @@ interface commentDataTypes {
   userName: string;
   memberId: number;
   comment: string;
-  profileImageUrl: string;
+  profileUrl: string;
 }
 const FeedDetail = () => {
   const location = useLocation();
@@ -55,7 +55,7 @@ const FeedDetail = () => {
               key={item.id}
               count={item.comment?.length}
               id={item.id}
-              profile={item.profileImageUrl}
+              profile={item.profileUrl}
               writer={item.userName}
               comment={item.comment}
             />
