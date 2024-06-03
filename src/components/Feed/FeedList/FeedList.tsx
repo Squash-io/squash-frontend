@@ -64,7 +64,7 @@ const FeedList = () => {
               key={item.feedId}
               id={item.feedId}
               name={item.userName}
-              repository={item.repoUrl}
+              repository={item.repoUrl.replace('https://github.com/', '').split('/commit/')[0]}
               image={item.profileImageUrl}
               category={item.commitType}
               activityTitle={
