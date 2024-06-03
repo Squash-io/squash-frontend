@@ -2,8 +2,12 @@ import * as styles from './RepositoryItem.style';
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { useState } from 'react';
-
-const RepositoryItem = () => {
+interface RepositoryItemInterface {
+  id?: number;
+  title: string;
+  description: string;
+}
+const RepositoryItem = ({ title, description }: RepositoryItemInterface) => {
   const [selectRepo, setSelectRepo] = useState(false);
   return (
     <styles.RepositoryContainer
@@ -14,18 +18,12 @@ const RepositoryItem = () => {
     >
       <styles.RepositoryTitleContainer>
         <Txt color={COLORS.baseColors.gray950} textStyleName="P4">
-          JjungminLee/TypeScript Master
+          {title}
         </Txt>
         <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
-          타입스크립트 마스터가 될테야!
+          {description}
         </Txt>
       </styles.RepositoryTitleContainer>
-      <styles.LanguageContainer>
-        <styles.LanguageCircle color={COLORS.languageColors.TypeScript} />
-        <Txt color={COLORS.baseColors.gray500} textStyleName="P6">
-          Typescript
-        </Txt>
-      </styles.LanguageContainer>
     </styles.RepositoryContainer>
   );
 };

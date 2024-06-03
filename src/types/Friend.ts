@@ -17,17 +17,12 @@ interface Friend {
   onLikeToggle: (friendId: number, isLiked: boolean) => void;
 }
 
-interface FriendListReq {
-  page: number;
-}
-
 interface PostLikeReq {
   friendId: number;
   isLiked: boolean;
 }
 interface PostLikeRes {
   status: number;
-  message: string;
 }
 
 interface FriendDetail {

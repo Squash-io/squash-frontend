@@ -40,4 +40,7 @@ export const GoalList = styled.ul`
 export const MyGoal = styled.div`
   display: flex;
   margin-bottom: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
