@@ -21,7 +21,7 @@ const CreateGoal = () => {
 
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
     }
-  }, []);
+  }, [data]);
   return (
     <styles.CreateGoalContainer>
       <styles.CreateGoalInputContainer>

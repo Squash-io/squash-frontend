@@ -43,7 +43,7 @@ const UserMy = () => {
       setCategories((prev) => [...(prev || []), ...categoryData]);
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
     }
-  }, []);
+  }, [data]);
 
   // const category = ['개인공부', '공모전', '유어슈', '우테코', '코테'];
   // const repository = [
