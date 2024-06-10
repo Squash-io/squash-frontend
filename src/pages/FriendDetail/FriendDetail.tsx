@@ -1,6 +1,6 @@
 import { ActivityList } from '../../components/FriendDetail/ActivityList/ActivityList';
 import { FriendInfo } from '../../components/FriendDetail/FriendInfo/FriendInfo';
-import { FriendDetailContainer } from '../FriendDetail/FriendDetail.style';
+import { FriendDetailContainer, FriendContribution } from '../FriendDetail/FriendDetail.style';
 import { useLocation } from 'react-router-dom';
 
 const FriendDetail = () => {
@@ -18,6 +18,9 @@ const FriendDetail = () => {
         bio={bio}
         isStarred={isStarred}
       ></FriendInfo>
+      <FriendContribution>
+        <img src={`https://ghchart.rshah.org/219138/${githubName}`} />
+      </FriendContribution>
       <ActivityList friendId={friendId} />
     </FriendDetailContainer>
   );
