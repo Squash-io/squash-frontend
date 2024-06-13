@@ -6,7 +6,7 @@ export const CreateCategoryContainer = styled.section`
   gap: 4rem;
   padding-top: 6rem;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 14rem);
   padding-left: 2rem;
   padding-right: 2rem;
   overflow-y: auto;
