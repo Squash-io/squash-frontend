@@ -14,3 +14,11 @@ export const FriendDetailContainer = styled.section`
     display: none;
   }
 `;
+
+export const FriendContribution = styled.div`
+  img {
+    padding: 1.2rem 2rem;
+    width: 100%;
+    overflow-x: scroll;
+  }
+`;
