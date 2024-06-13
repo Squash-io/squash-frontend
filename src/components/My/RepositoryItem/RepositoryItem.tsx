@@ -3,17 +3,36 @@ import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
 import { useState } from 'react';
 interface RepositoryItemInterface {
-  id?: number;
+  id: number;
   title: string;
   description: string;
+  selectRepoArray?: number[];
+  setSelectRepoArray: React.Dispatch<React.SetStateAction<number[]>>;
 }
-const RepositoryItem = ({ title, description }: RepositoryItemInterface) => {
+const RepositoryItem = ({
+  id,
+  title,
+  description,
+  setSelectRepoArray,
+}: RepositoryItemInterface) => {
   const [selectRepo, setSelectRepo] = useState(false);
+
+  const toggleSelection = () => {
+    setSelectRepo(!selectRepo);
+
+    setSelectRepoArray((prev) => {
+      const isAlreadySelected = prev.includes(id);
+      if (isAlreadySelected) {
+        return prev.filter((repoId) => repoId !== id);
+      } else {
+        return [...prev, id];
+      }
+    });
+  };
+
   return (
     <styles.RepositoryContainer
-      onClick={() => {
-        setSelectRepo(!selectRepo);
-      }}
+      onClick={toggleSelection}
       color={selectRepo ? COLORS.baseColors.gray050 : COLORS.baseColors.gray000}
     >
       <styles.RepositoryTitleContainer>

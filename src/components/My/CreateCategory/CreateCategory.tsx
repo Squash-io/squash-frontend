@@ -6,13 +6,22 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import { useState } from 'react';
-import { RespositoriesInteface } from '../../../types/My';
+import { PostMemberRepositoryReq, RespositoriesInteface } from '../../../types/My';
 import useGetRepository from '../../../hooks/useGetRepository';
+import postRepository from '../../../apis/postRepository';
 const CreateCategory = () => {
   const [repositories, setRepositories] = useState<RespositoriesInteface[]>();
+  const [name, setName] = useState('');
+  const [selectRepoArray, setSelectRepoArray] = useState<number[]>([]);
   const navigate = useNavigate();
   const { data } = useGetRepository();
-  const handleConfirmClick = () => {
+  const handleConfirmClick = async () => {
+    const postData: PostMemberRepositoryReq = {
+      name: name,
+      repositoriyIds: selectRepoArray,
+    };
+    await postRepository(postData);
+
     navigate('/my');
   };
 
@@ -23,11 +32,17 @@ const CreateCategory = () => {
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
     }
   }, [data]);
-  // @todo : recoil로 select된 레포들 id 관리해서 id배열에 넣고 서버에 데이터 보내기
+
   return (
     <styles.CreateCategoryContainer>
       <styles.CreateCategoryInputContainer>
-        <styles.CreateCategoryInput placeholder="카테고리 이름" />
+        <styles.CreateCategoryInput
+          placeholder="카테고리 이름"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
         <styles.CreateCategoryInputBorderLine />
       </styles.CreateCategoryInputContainer>
       <styles.SelectRepositoryContainer>
@@ -39,13 +54,15 @@ const CreateCategory = () => {
         </Txt>
         {repositories &&
           repositories
-            .slice(0, 4)
+            .slice(0, repositories.length)
             .map((item) => (
               <RepositoryItem
                 key={item.id}
                 title={item.name}
                 description={item.description}
                 id={item.id}
+                selectRepoArray={selectRepoArray}
+                setSelectRepoArray={setSelectRepoArray}
               />
             ))}
       </styles.SelectRepositoryContainer>

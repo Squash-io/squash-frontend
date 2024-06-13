@@ -13,4 +13,9 @@ export interface RespositoriesInteface {
   url: string;
   description: string;
 }
+export interface PostCategoryInterface {
+  name: string;
+  repositoriyIds: number[];
+}
 export type GetMemberReposiotryRes = RepositoryInterface[];
+export type PostMemberRepositoryReq = PostCategoryInterface;
