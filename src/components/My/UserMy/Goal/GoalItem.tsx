@@ -1,12 +1,11 @@
 import { COLORS } from '../../../../constants/Color/Color';
 import Txt from '../../../../constants/Txt/Txt';
-import { formatToTodayOrDate } from '../../../../utils/dateUtils';
 import { GoalInfo, GoalItemContainer, GoalTitle, StartCircle, StartDate } from './GoalItem.style';
 
 interface GoalItemProps {
   goalTitle: string;
   period: number;
-  startDate: number;
+  startDate: string;
   repository: string;
 }
 const GoalItem = (props: GoalItemProps) => {
@@ -25,7 +24,7 @@ const GoalItem = (props: GoalItemProps) => {
         <StartDate>
           <StartCircle></StartCircle>
           <Txt color={COLORS.baseColors.gray400} textStyleName="P6">
-            start : {formatToTodayOrDate(startDate)}
+            start : {startDate}
           </Txt>
         </StartDate>
       </GoalInfo>

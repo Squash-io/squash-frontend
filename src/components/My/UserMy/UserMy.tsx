@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IcGoalAdd } from '../../../assets';
-import { IcFab } from '../../../assets';
+import { IcGoalAdd, IcFab } from '../../../assets';
 import NoGoalBanner from './Banner/NoGoalBanner';
 import CategoryItem from './CategoryItem/CategoryItem';
 import RepositoryItem from './RepositoryItem/RepositoryItem';
@@ -16,51 +15,48 @@ import GoalItem from './Goal/GoalItem';
 import { COLORS } from '../../../constants/Color/Color';
 import Txt from '../../../constants/Txt/Txt';
 import { useNavigate } from 'react-router-dom';
-import { CategoryInterface, RepositoryInterface } from '../../../types/My';
+import { CategoryInterface, GetStreakInterface, RepositoryInterface } from '../../../types/My';
 import useGetRepository from '../../../hooks/useGetRepository';
+import useGetStreak from '../../../hooks/useGetStreak';
 
 const UserMy = () => {
   const navigate = useNavigate();
   const { data } = useGetRepository();
+  const { data: goalData } = useGetStreak();
   const [categories, setCategories] = useState<CategoryInterface[]>();
   const [repositories, setRepositories] = useState<RepositoryInterface[]>();
+  const [goals, setGoals] = useState<GetStreakInterface>();
   const [clickCategory, setClickCategory] = useState(0);
+
   const handleClickCategory = (index: number) => {
     setClickCategory(index);
   };
+
   const handleCategoryAdd = () => {
     navigate('/my/category');
   };
+
   const handleGoalAdd = () => {
     navigate('/my/goal');
   };
+
   useEffect(() => {
-    if (data) {
+    if (data && goalData) {
       const categoryData = data.map((item) => item.category);
       const repositoriesData = data.flatMap((item) => item);
 
-      // 기존 카테고리와 리포지터리 상태를 유지하며 새 데이터 추가
       setCategories((prev) => [...(prev || []), ...categoryData]);
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
+      setGoals(goalData);
     }
-  }, [data]);
+  }, [data, goalData]);
 
-  const goal = [
-    {
-      id: 1,
-      goalTitle: '알고리즘 1일 1커밋',
-      period: 14,
-      startDate: 20240211,
-      repository: 'GDSCAlogrithm/JjungminCPP',
-    },
-    {
-      id: 2,
-      goalTitle: 'TIL',
-      period: 150,
-      startDate: 20231209,
-      repository: 'TIL',
-    },
-  ];
+  const calculateStartDate = (commitLength: number) => {
+    const today = new Date();
+    today.setDate(today.getDate() - commitLength);
+    return today.toLocaleDateString();
+  };
+
   return (
     <UserMyContainer>
       <div onClick={handleGoalAdd}>
@@ -73,7 +69,7 @@ const UserMy = () => {
               key={item.id}
               name={item.name}
               onClick={() => handleClickCategory(index)}
-              isSelected={index == clickCategory}
+              isSelected={index === clickCategory}
             />
           ))}
         </CategoryList>
@@ -85,7 +81,7 @@ const UserMy = () => {
         {repositories &&
           repositories.map(
             (repo, index) =>
-              index == clickCategory &&
+              index === clickCategory &&
               repo.repositories.map((item) => (
                 <RepositoryItem
                   key={item.id}
@@ -102,20 +98,19 @@ const UserMy = () => {
           <Txt color={COLORS.baseColors.gray950} textStyleName="P2">
             내 목표
           </Txt>
-
           <button onClick={handleGoalAdd}>
             <IcFab />
           </button>
         </MyGoal>
-        {goal.map((item) => (
+        {goals && (
           <GoalItem
-            key={item.id}
-            goalTitle={item.goalTitle}
-            period={item.period}
-            startDate={item.startDate}
-            repository={item.repository}
+            key={goals.goalId + goals.goalName}
+            goalTitle={goals.goalName}
+            period={goals.commitLength + 1}
+            startDate={calculateStartDate(goals.commitLength)}
+            repository={goals.repositoryDto.url}
           />
-        ))}
+        )}
       </GoalList>
     </UserMyContainer>
   );

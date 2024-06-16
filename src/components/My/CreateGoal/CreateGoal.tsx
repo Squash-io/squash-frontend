@@ -1,31 +1,48 @@
 import * as styles from './CreateGoal.style';
 import Txt from '../../../constants/Txt/Txt';
 import { COLORS } from '../../../constants/Color/Color';
-import RepositoryItem from '../RepositoryItem/RepositoryItem';
 import { useNavigate } from 'react-router-dom';
 import useGetRepository from '../../../hooks/useGetRepository';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { RespositoriesInteface } from '../../../types/My';
+import { useEffect, useState } from 'react';
+import { PostStreakReq, RespositoriesInteface } from '../../../types/My';
+import postStreak from '../../../apis/postStreak';
+import GoalRepositoryItem from '../RepositoryItem/GoalRepositoryItem';
+
 const CreateGoal = () => {
   const navigate = useNavigate();
   const { data } = useGetRepository();
-
+  const [name, setName] = useState('');
   const [repositories, setRepositories] = useState<RespositoriesInteface[]>();
-  const handleConfirmClick = () => {
-    navigate('/my');
+  const [selectedRepoId, setSelectedRepoId] = useState<number | null>(null);
+
+  const handleConfirmClick = async () => {
+    if (selectedRepoId) {
+      const postData: PostStreakReq = {
+        name: name,
+        repositoryId: selectedRepoId,
+      };
+      await postStreak(postData);
+      navigate('/my');
+    } else {
+      alert('레포지토리를 선택해주세요.');
+    }
   };
+
   useEffect(() => {
     if (data) {
       const repositoriesData = data.flatMap((item) => item.repositories);
-
-      setRepositories((prev) => [...(prev || []), ...repositoriesData]);
+      setRepositories(repositoriesData);
     }
   }, [data]);
+
   return (
     <styles.CreateGoalContainer>
       <styles.CreateGoalInputContainer>
-        <styles.CreateGoalInput placeholder="목표를 입력해주세요" />
+        <styles.CreateGoalInput
+          placeholder="목표를 입력해주세요"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <styles.CreateGoalInputBorderLine />
       </styles.CreateGoalInputContainer>
       <styles.SelectRepositoryContainer>
@@ -39,11 +56,13 @@ const CreateGoal = () => {
           repositories
             .slice(0, 4)
             .map((item) => (
-              <RepositoryItem
+              <GoalRepositoryItem
                 key={item.id}
                 title={item.name}
                 description={item.description}
                 id={item.id}
+                isSelected={item.id === selectedRepoId}
+                onSelect={() => setSelectedRepoId(item.id)}
               />
             ))}
       </styles.SelectRepositoryContainer>
@@ -55,4 +74,5 @@ const CreateGoal = () => {
     </styles.CreateGoalContainer>
   );
 };
+
 export default CreateGoal;
