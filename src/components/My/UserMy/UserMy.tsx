@@ -41,12 +41,14 @@ const UserMy = () => {
   };
 
   useEffect(() => {
-    if (data && goalData) {
+    if (data) {
       const categoryData = data.map((item) => item.category);
       const repositoriesData = data.flatMap((item) => item);
 
       setCategories((prev) => [...(prev || []), ...categoryData]);
       setRepositories((prev) => [...(prev || []), ...repositoriesData]);
+    }
+    if (goalData) {
       setGoals(goalData);
     }
   }, [data, goalData]);
