@@ -53,18 +53,16 @@ const CreateGoal = () => {
           내 목표와 연동되는 레포지토리를 선택해주세요
         </Txt>
         {repositories &&
-          repositories
-            .slice(0, 4)
-            .map((item) => (
-              <GoalRepositoryItem
-                key={item.id}
-                title={item.name}
-                description={item.description}
-                id={item.id}
-                isSelected={item.id === selectedRepoId}
-                onSelect={() => setSelectedRepoId(item.id)}
-              />
-            ))}
+          repositories.map((item) => (
+            <GoalRepositoryItem
+              key={item.id}
+              title={item.name}
+              description={item.description}
+              id={item.id}
+              isSelected={item.id === selectedRepoId}
+              onSelect={() => setSelectedRepoId(item.id)}
+            />
+          ))}
       </styles.SelectRepositoryContainer>
       <styles.ConfirmButton onClick={handleConfirmClick}>
         <Txt color={COLORS.baseColors.gray000} textStyleName="B2">
